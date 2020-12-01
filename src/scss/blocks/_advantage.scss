@@ -1,0 +1,906 @@
+.advantage {
+  .section__content {
+    padding: 10px 0;
+  }
+
+  .blocks {
+    $block-odd-margin-top: 60px;
+    $image-width: 35px;
+    $image-height: 32px;
+    $block-width: 270px;
+    $block-height: 400px;
+    $block-margin-horizontal: 20px;
+    $block-margin-vertical: 10px;
+    $block-border: 5px;
+    $margin-ghost: 20px;
+    $block-width-full: $block-width + $block-border*2;
+    $block-height-full: $block-height + $block-border*2;
+
+    display: flex;
+    position: relative;
+    padding: 10px;
+
+    .block {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      width: $block-width;
+      height: $block-height;
+      padding: 30px 0;
+
+      h3 {
+        padding: 10px;
+        width: calc(100% - 40px);
+      }
+
+      p {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      &:not(:first-child) {
+        margin-left: $block-margin-horizontal;
+      }
+
+      &:before,
+      &:after,
+      .angle1,
+      .angle2 {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 25px;
+      }
+      &:before {
+        top: 0 - $block-border;
+        right: 0 - $block-border;
+        height: 40px;
+      }
+      &:after {
+        bottom: 0 - $block-border;
+        left: 0 - $block-border;
+        height: 40px;
+        transform: scale(-1, -1);
+      }
+      .angle1 {
+        top: 0 - $block-border;
+        left: 0 - $block-border;
+        height: 25px;
+      }
+      .angle2 {
+        bottom: 0 - $block-border;
+        right: 0 - $block-border;
+        height: 25px;
+        transform: scale(-1, -1);
+      }
+    }
+
+    & > div {
+      display: flex;
+
+      .block:first-child {
+        margin-top: $block-odd-margin-top;
+      }
+      &:not(:first-child) {
+        margin-left: $block-margin-horizontal;
+      }
+    }
+
+    & > div:nth-child(1) .block {
+      &:first-child {
+        border: $block-border solid $pink;
+
+        h3 {
+          border-bottom: $block-border solid $pink;
+        }
+      }
+      &:first-child:before,
+      &:first-child:after {
+        background-image: url("../images/angle_pink.svg");
+      }
+      &:first-child .angle1,
+      &:first-child .angle2 {
+        background-image: url("../images/angle2_pink.svg");
+      }
+
+      &:last-child {
+        border: $block-border solid $blue;
+
+        h3 {
+          border-bottom: $block-border solid $blue;
+        }
+      }
+      &:last-child:before,
+      &:last-child:after {
+        background-image: url("../images/angle_blue.svg");
+      }
+      &:last-child .angle1,
+      &:last-child .angle2 {
+        background-image: url("../images/angle2_blue.svg");
+      }
+    }
+
+    & > div:nth-child(2) .block {
+      &:first-child {
+        border: $block-border solid $yellow;
+
+        h3 {
+          border-bottom: $block-border solid $yellow;
+        }
+      }
+      &:first-child:before,
+      &:first-child:after {
+        background-image: url("../images/angle_yellow.svg");
+      }
+      &:first-child .angle1,
+      &:first-child .angle2 {
+        background-image: url("../images/angle2_yellow.svg");
+      }
+
+      &:last-child {
+        border: $block-border solid $purple;
+
+        h3 {
+          border-bottom: $block-border solid $purple;
+        }
+      }
+      &:last-child:before,
+      &:last-child:after {
+        background-image: url("../images/angle_purple.svg");
+      }
+      &:last-child .angle1,
+      &:last-child .angle2 {
+        background-image: url("../images/angle2_purple.svg");
+      }
+    }
+
+    & > img {
+      position: absolute;
+    }
+
+    @keyframes ghostAnimation1 {
+      from {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: 0 - $image-width;
+        animation-timing-function: linear;
+      }
+      12.5%, 32%, 73%, 92.5% {
+        background-image: url("../images/monsterGhost1LookBottom.svg");
+        animation-timing-function: step-start;
+      }
+      21.5%, 30.5%, 41%, 50%, 71.5%, 80.5%, 91%, from, to {
+        background-image: url("../images/monsterGhost1.svg");
+        animation-timing-function: step-start;
+      }
+      23%, 42.5%, 62.5%, 82% {
+        background-image: url("../images/monsterGhost1LookTop.svg");
+        animation-timing-function: step-start;
+      }
+      from, 50% {
+        transform: scale(1, 1);
+        animation-timing-function: step-start;
+      }
+      62.5%, to {
+        transform: scale(-1, 1);
+        animation-timing-function: step-start;
+      }
+      12.5% {
+        top: 100%;
+        left: 0 - $image-width;
+        animation-timing-function: linear;
+      }
+      21.5% {
+        top: 100%;
+        left: $block-width-full + $block-margin-horizontal;
+        animation-timing-function: linear;
+      }
+      23% {
+        top: $block-height-full + $block-margin-vertical;
+        left: $block-width-full + $block-margin-horizontal;
+        animation-timing-function: linear;
+      }
+      30.5% {
+        top: $block-height-full + $block-margin-vertical;
+        left: $block-width-full*2 - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      32% {
+        top: 100%;
+        left: $block-width-full*2 - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      41% {
+        top: 100%;
+        left: $block-width-full*3 + $block-margin-horizontal*2;
+        animation-timing-function: linear;
+      }
+      42.5% {
+        top: $block-height-full + $block-margin-vertical;
+        left: $block-width-full*3 + $block-margin-horizontal*2;
+        animation-timing-function: linear;
+      }
+      50% {
+        top: $block-height-full + $block-margin-vertical;
+        left: 100%;
+        animation-timing-function: linear;
+      }
+      62.5% {
+        top: 0 - $image-height;
+        left: 100%;
+        animation-timing-function: linear;
+      }
+      71.5% {
+        top: 0 - $image-height;
+        left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      73% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      80.5% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+        animation-timing-function: linear;
+      }
+      82% {
+        top: 0 - $image-height;
+        left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+        animation-timing-function: linear;
+      }
+      91% {
+        top: 0 - $image-height;
+        left: $block-width-full - $image-width;
+        animation-timing-function: linear;
+      }
+      92.5% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: $block-width-full - $image-width;
+        animation-timing-function: linear;
+      }
+      to {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: 0 - $image-width;
+        animation-timing-function: linear;
+      }
+    }
+
+    @keyframes ghostAnimation2 {
+      from {
+        top: $block-height-full + $block-margin-vertical;
+        left: 100%;
+        animation-timing-function: linear;
+      }
+      12.5%, 32%, 73%, 92.5% {
+        background-image: url("../images/monsterGhost2LookTop.svg");
+        animation-timing-function: step-start;
+      }
+      21.5%, 30.5%, 41%, 50%, 71.5%, 80.5%, 91%, from, to {
+        background-image: url("../images/monsterGhost2.svg");
+        animation-timing-function: step-start;
+      }
+      23%, 42.5%, 62.5%, 82% {
+        background-image: url("../images/monsterGhost2LookBottom.svg");
+        animation-timing-function: step-start;
+      }
+      from, 50% {
+        transform: scale(-1, 1);
+        animation-timing-function: step-start;
+      }
+      62.5%, to {
+        transform: scale(1, 1);
+        animation-timing-function: step-start;
+      }
+      12.5% {
+        top: 0 - $image-height;
+        left: 100%;
+        animation-timing-function: linear;
+      }
+      21.5% {
+        top: 0 - $image-height;
+        left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      23% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      30.5% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+        animation-timing-function: linear;
+      }
+      32% {
+        top: 0 - $image-height;
+        left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+        animation-timing-function: linear;
+      }
+      41% {
+        top: 0 - $image-height;
+        left: $block-width-full - $image-width;
+        animation-timing-function: linear;
+      }
+      42.5% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: $block-width-full - $image-width;
+        animation-timing-function: linear;
+      }
+      50% {
+        top: 0 - $image-height + $block-odd-margin-top;
+        left: 0 - $image-width;
+        animation-timing-function: linear;
+      }
+      62.5% {
+        top: 100%;
+        left: 0 - $image-width;
+        animation-timing-function: linear;
+      }
+      71.5% {
+        top: 100%;
+        left: $block-width-full + $block-margin-horizontal;
+        animation-timing-function: linear;
+      }
+      73% {
+        top: $block-height-full + $block-margin-vertical;
+        left: $block-width-full + $block-margin-horizontal;
+        animation-timing-function: linear;
+      }
+      80.5% {
+        top: $block-height-full + $block-margin-vertical;
+        left: $block-width-full*2 - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      82% {
+        top: 100%;
+        left: $block-width-full*2 - $margin-ghost;
+        animation-timing-function: linear;
+      }
+      91% {
+        top: 100%;
+        left: $block-width-full*3 + $block-margin-horizontal*2;
+        animation-timing-function: linear;
+      }
+      92.5% {
+        top: $block-height-full + $block-margin-vertical;
+        left: $block-width-full*3 + $block-margin-horizontal*2;
+        animation-timing-function: linear;
+      }
+      to {
+        top: $block-height-full + $block-margin-vertical;
+        left: 100%;
+        animation-timing-function: linear;
+      }
+    }
+
+    .ghost1,
+    .ghost2 {
+      position: absolute;
+      background-size: cover;
+      animation-iteration-count: infinite;
+      animation-duration: 30s;
+      width: $image-width;
+      height: $image-height;
+    }
+    .ghost1 {
+      animation-name: ghostAnimation1;
+    }
+    .ghost2 {
+      animation-name: ghostAnimation2;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      $block-width: 200px;
+      $block-height: 350px;
+      $block-width-full: $block-width + $block-border*2;
+      $block-height-full: $block-height + $block-border*2;
+
+      .block {
+        padding: 20px 0;
+        width: $block-width;
+        height: $block-height;
+
+        h3 {
+          font-size: 12px;
+          line-height: 18px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+
+      @keyframes ghostAnimation1xl {
+        from {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        12.5%, 32%, 73%, 92.5% {
+          background-image: url("../images/monsterGhost1LookBottom.svg");
+          animation-timing-function: step-start;
+        }
+        21.5%, 30.5%, 41%, 50%, 71.5%, 80.5%, 91%, from, to {
+          background-image: url("../images/monsterGhost1.svg");
+          animation-timing-function: step-start;
+        }
+        23%, 42.5%, 62.5%, 82% {
+          background-image: url("../images/monsterGhost1LookTop.svg");
+          animation-timing-function: step-start;
+        }
+        from, 50% {
+          transform: scale(1, 1);
+          animation-timing-function: step-start;
+        }
+        62.5%, to {
+          transform: scale(-1, 1);
+          animation-timing-function: step-start;
+        }
+        12.5% {
+          top: 100%;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        21.5% {
+          top: 100%;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        23% {
+          top: $block-height-full + $block-margin-vertical;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        30.5% {
+          top: $block-height-full + $block-margin-vertical;
+          left: $block-width-full*2 - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        32% {
+          top: 100%;
+          left: $block-width-full*2 - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        41% {
+          top: 100%;
+          left: $block-width-full*3 + $block-margin-horizontal*2;
+          animation-timing-function: linear;
+        }
+        42.5% {
+          top: $block-height-full + $block-margin-vertical;
+          left: $block-width-full*3 + $block-margin-horizontal*2;
+          animation-timing-function: linear;
+        }
+        50% {
+          top: $block-height-full + $block-margin-vertical;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        62.5% {
+          top: 0 - $image-height;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        71.5% {
+          top: 0 - $image-height;
+          left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        73% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        80.5% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+          animation-timing-function: linear;
+        }
+        82% {
+          top: 0 - $image-height;
+          left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+          animation-timing-function: linear;
+        }
+        91% {
+          top: 0 - $image-height;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        92.5% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        to {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+      }
+
+      @keyframes ghostAnimation2xl {
+        from {
+          top: $block-height-full + $block-margin-vertical;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        12.5%, 32%, 73%, 92.5% {
+          background-image: url("../images/monsterGhost2LookTop.svg");
+          animation-timing-function: step-start;
+        }
+        21.5%, 30.5%, 41%, 50%, 71.5%, 80.5%, 91%, from, to {
+          background-image: url("../images/monsterGhost2.svg");
+          animation-timing-function: step-start;
+        }
+        23%, 42.5%, 62.5%, 82% {
+          background-image: url("../images/monsterGhost2LookBottom.svg");
+          animation-timing-function: step-start;
+        }
+        from, 50% {
+          transform: scale(-1, 1);
+          animation-timing-function: step-start;
+        }
+        62.5%, to {
+          transform: scale(1, 1);
+          animation-timing-function: step-start;
+        }
+        12.5% {
+          top: 0 - $image-height;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        21.5% {
+          top: 0 - $image-height;
+          left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        23% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full*3 + $block-margin-horizontal*2 - $image-width - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        30.5% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+          animation-timing-function: linear;
+        }
+        32% {
+          top: 0 - $image-height;
+          left: $block-width-full*2 + $block-margin-horizontal*2 - $image-width + $margin-ghost;
+          animation-timing-function: linear;
+        }
+        41% {
+          top: 0 - $image-height;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        42.5% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        50% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        62.5% {
+          top: 100%;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        71.5% {
+          top: 100%;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        73% {
+          top: $block-height-full + $block-margin-vertical;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        80.5% {
+          top: $block-height-full + $block-margin-vertical;
+          left: $block-width-full*2 - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        82% {
+          top: 100%;
+          left: $block-width-full*2 - $margin-ghost;
+          animation-timing-function: linear;
+        }
+        91% {
+          top: 100%;
+          left: $block-width-full*3 + $block-margin-horizontal*2;
+          animation-timing-function: linear;
+        }
+        92.5% {
+          top: $block-height-full + $block-margin-vertical;
+          left: $block-width-full*3 + $block-margin-horizontal*2;
+          animation-timing-function: linear;
+        }
+        to {
+          top: $block-height-full + $block-margin-vertical;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+      }
+
+      .ghost1 {
+        animation-duration: 25s;
+        animation-name: ghostAnimation1xl;
+      }
+
+      .ghost2 {
+        animation-duration: 25s;
+        animation-name: ghostAnimation2xl;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      $block-width: 300px;
+      $block-height: 350px;
+      $block-width-full: $block-width + $block-border*2;
+      $block-height-full: $block-height + $block-border*2;
+
+      flex-direction: column;
+
+      & > div {
+        &:not(:first-child) {
+          margin-top: -$block-odd-margin-top + $block-margin-horizontal;
+          margin-left: 0;
+        }
+      }
+
+      .block {
+        padding: 30px 0;
+        width: $block-width;
+        height: $block-height;
+
+        h3 {
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      @keyframes ghostAnimation1lg {
+        from {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        26%, 90% {
+          background-image: url("../images/monsterGhost1LookBottom.svg");
+          animation-timing-function: step-start;
+        }
+        38%, 50%, 88%, from, to {
+          background-image: url("../images/monsterGhost1.svg");
+          animation-timing-function: step-start;
+        }
+        40%, 76% {
+          background-image: url("../images/monsterGhost1LookTop.svg");
+          animation-timing-function: step-start;
+        }
+        from, 50% {
+          transform: scale(1, 1);
+          animation-timing-function: step-start;
+        }
+        76%, to {
+          transform: scale(-1, 1);
+          animation-timing-function: step-start;
+        }
+        26% {
+          top: 100%;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        38% {
+          top: 100%;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        40% {
+          top: $block-height-full*2 + $block-margin-vertical*2;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        50% {
+          top: $block-height-full*2 + $block-margin-vertical*2;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        76% {
+          top: 0 - $image-height;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        88% {
+          top: 0 - $image-height;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        90% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        to {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+      }
+
+      @keyframes ghostAnimation2lg {
+        from {
+          top: $block-height-full*2 + $block-margin-vertical*2;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        26%, 90% {
+          background-image: url("../images/monsterGhost2LookTop.svg");
+          animation-timing-function: step-start;
+        }
+        38%, 50% {
+          background-image: url("../images/monsterGhost2.svg");
+          animation-timing-function: step-start;
+        }
+        40%, 76% {
+          background-image: url("../images/monsterGhost2LookBottom.svg");
+          animation-timing-function: step-start;
+        }
+        88%, from, to {
+          background-image: url("../images/monsterGhost2.svg");
+          animation-timing-function: step-start;
+        }
+        from, 50% {
+          transform: scale(-1, 1);
+          animation-timing-function: step-start;
+        }
+        76%, to {
+          transform: scale(1, 1);
+          animation-timing-function: step-start;
+        }
+        26% {
+          top: 0 - $image-height;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+        38% {
+          top: 0 - $image-height;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        40% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: $block-width-full - $image-width;
+          animation-timing-function: linear;
+        }
+        50% {
+          top: 0 - $image-height + $block-odd-margin-top;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        76% {
+          top: 100%;
+          left: 0 - $image-width;
+          animation-timing-function: linear;
+        }
+        88% {
+          top: 100%;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        90% {
+          top: $block-height-full*2 + $block-margin-vertical*2;
+          left: $block-width-full + $block-margin-horizontal;
+          animation-timing-function: linear;
+        }
+        to {
+          top: $block-height-full*2 + $block-margin-vertical*2;
+          left: 100%;
+          animation-timing-function: linear;
+        }
+      }
+
+      .ghost1 {
+        animation-duration: 20s;
+        animation-name: ghostAnimation1lg;
+      }
+
+      .ghost2 {
+        animation-duration: 20s;
+        animation-name: ghostAnimation2lg;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      $block-width: 200px;
+      $block-height: 350px;
+      $block-width-full: $block-width + $block-border*2;
+      $block-height-full: $block-height + $block-border*2;
+
+      & > div {
+        &:not(:first-child) {
+          margin-top: -$block-odd-margin-top + $block-margin-horizontal;
+          margin-left: 0;
+        }
+      }
+
+      .block {
+        padding: 20px 0;
+        width: $block-width;
+        height: $block-height;
+
+        h3 {
+          font-size: 12px;
+          line-height: 18px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+
+      .ghost1,
+      .ghost2 {
+        display: none;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      $block-width: 300px;
+      $block-height: 300px;
+      $block-width-full: $block-width + $block-border*2;
+      $block-height-full: $block-height + $block-border*2;
+
+      & > div {
+        flex-direction: column;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        &:not(:first-child) {
+          margin-top: 20px;
+          margin-left: 0;
+        }
+        .block:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .block {
+        padding: 20px 0;
+        width: 100%;
+        max-width: $block-width;
+        height: $block-height;
+        margin-top: 20px;
+
+        &:last-child {
+          margin-left: 0;
+        }
+
+        h3 {
+          font-size: 12px;
+          line-height: 18px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

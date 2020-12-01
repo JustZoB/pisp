@@ -1,0 +1,935 @@
+.scheme {
+  padding-top: 160px;
+  overflow-x: hidden;
+
+  &__image {
+    position: relative;
+
+    .lines {
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        width: 584px;
+      }
+    }
+
+    .pisp {
+      position: absolute;
+      top: 14px;
+      left: 356px;
+      z-index: -1;
+      background: radial-gradient(50% 50% at 50% 50%, $blue 39.06%, transparent 100%);
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        width: 228px;
+        top: 6px;
+        left: 177px;
+      }
+    }
+
+    .ghost1,
+    .ghost2,
+    .ghost3,
+    .ghost4 {
+      position: absolute;
+      width: 25px;
+      height: 23px;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      background-image: url("../images/monsterGhost1.svg");
+      background-size: cover;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        width: 16px;
+        height: 15px;
+      }
+    }
+
+    .ghost1 {
+      top: 6px;
+      left: 337px;
+      animation-name: ghostAnim1;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        top: 10px;
+        left: 145px;
+        animation-name: unset;
+      }
+    }
+    .ghost2 {
+      top: 23px;
+      left: 817px;
+      animation-name: ghostAnim2;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        top: 14px;
+        left: 418px;
+        animation-name: unset;
+      }
+
+    }
+    .ghost3 {
+      top: 228px;
+      left: 58px;
+      transform: scale(-1, 1);
+      animation-name: ghostAnim3;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        top: 120px;
+        left: 36px;
+        transform: scale(-1, 1);
+        animation-name: unset;
+      }
+    }
+    .ghost4 {
+      top: 365px;
+      left: 504px;
+      animation-name: ghostAnim4;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        top: 204px;
+        left: 249px;
+        animation-name: unset;
+      }
+    }
+    .pacman {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      background-image: url("../images/pacman.svg");
+      background-size: cover;
+      top: 351px;
+      left: 832px;
+      animation-name: pacmanAnim;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        width: 16px;
+        height: 16px;
+        top: 176px;
+        left: 403px;
+        animation-name: unset;
+      }
+    }
+    .exPoint {
+      position: absolute;
+      width: 10px;
+      height: 23px;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      background-image: url("../images/exclamationPoint2.svg");
+      background-size: cover;
+      top: -31px;
+      left: 782px;
+      animation-name: exPointAnim;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        animation-name: unset;
+        display: none;
+      }
+    }
+  }
+
+  @keyframes ghostAnim1 {
+    from {
+      top: 68px;
+      left: 210px;
+      opacity: 0;
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    7% {
+      top: 60px;
+      left: 228px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    14% {
+      top: 47px;
+      left: 252px;
+      animation-timing-function: linear;
+    }
+    20% {
+      top: 36px;
+      left: 273px;
+      animation-timing-function: linear;
+    }
+    26% {
+      top: 26px;
+      left: 295px;
+      animation-timing-function: linear;
+    }
+    32% {
+      top: 15px;
+      left: 316px;
+      animation-timing-function: linear;
+    }
+    38% {
+      top: 6px;
+      left: 337px;
+      animation-timing-function: linear;
+    }
+    44% {
+      top: 0;
+      left: 359px;
+      animation-timing-function: linear;
+    }
+    50% {
+      top: 0;
+      left: 381px;
+      animation-timing-function: linear;
+    }
+    56% {
+      top: 0;
+      left: 381px;
+      animation-timing-function: linear;
+    }
+    62% {
+      top: 0;
+      left: 381px;
+      animation-timing-function: linear;
+    }
+    68% {
+      top: 0;
+      left: 404px;
+      animation-timing-function: linear;
+    }
+    74% {
+      top: 9px;
+      left: 427px;
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    75% {
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: step-end;
+    }
+    80% {
+      top: 18px;
+      left: 448px;
+      animation-timing-function: linear;
+    }
+    86% {
+      top: 30px;
+      left: 469px;
+      animation-timing-function: linear;
+    }
+    90% {
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    93% {
+      top: 45px;
+      left: 489px;
+      opacity: 0.5;
+      animation-timing-function: linear;
+    }
+    95% {
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    to {
+      top: 57px;
+      left: 510px;
+      opacity: 0;
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes ghostAnim2 {
+    from {
+      top: 35px;
+      left: 623px;
+      opacity: 0;
+      transform: scale(1, 1);
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    7% {
+      top: 20px;
+      left: 640px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    14% {
+      top: 6px;
+      left: 663px;
+      animation-timing-function: linear;
+    }
+    20% {
+      top: -4px;
+      left: 684px;
+      animation-timing-function: linear;
+    }
+    26% {
+      top: -8px;
+      left: 706px;
+      animation-timing-function: linear;
+    }
+    32% {
+      top: -8px;
+      left: 728px;
+      animation-timing-function: linear;
+    }
+    38% {
+      top: -4px;
+      left: 752px;
+      animation-timing-function: linear;
+    }
+    44% {
+      top: 5px;
+      left: 773px;
+      transform: scale(1, 1);
+      animation-timing-function: step-end;
+    }
+    50% {
+      top: 5px;
+      left: 773px;
+      transform: scale(-1, 1);
+      animation-timing-function: step-end;
+    }
+    56% {
+      top: 5px;
+      left: 773px;
+      transform: scale(-1, 1);
+      animation-timing-function: step-end;
+    }
+    62% {
+      top: 5px;
+      left: 773px;
+      transform: scale(1, 1);
+      animation-timing-function: linear;
+    }
+    68% {
+      top: 14px;
+      left: 795px;
+      animation-timing-function: linear;
+    }
+    74% {
+      top: 23px;
+      left: 817px;
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    75% {
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: step-end;
+    }
+    80% {
+      top: 32px;
+      left: 838px;
+      animation-timing-function: linear;
+    }
+    86% {
+      top: 42px;
+      left: 859px;
+      animation-timing-function: linear;
+    }
+    93% {
+      top: 52px;
+      left: 883px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    to {
+      top: 64px;
+      left: 908px;
+      opacity: 0;
+      transform: scale(1, 1);
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes ghostAnim3 {
+    from {
+      top: 476px;
+      left: 76px;
+      opacity: 0;
+      transform: scale(1, 1);
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    7% {
+      top: 454px;
+      left: 86px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    14% {
+      top: 440px;
+      left: 104px;
+      animation-timing-function: linear;
+    }
+    20% {
+      top: 426px;
+      left: 124px;
+      animation-timing-function: linear;
+    }
+    26% {
+      top: 416px;
+      left: 148px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    32% {
+      top: 401px;
+      left: 157px;
+      transform: scale(1, 1);
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    38% {
+      top: 318px;
+      left: 148px;
+      transform: scale(-1, 1);
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    44% {
+      top: 294px;
+      left: 128px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    50% {
+      top: 277px;
+      left: 110px;
+      animation-timing-function: linear;
+    }
+    56% {
+      top: 259px;
+      left: 93px;
+      animation-timing-function: linear;
+    }
+    62% {
+      top: 243px;
+      left: 76px;
+      animation-timing-function: linear;
+    }
+    68% {
+      top: 228px;
+      left: 58px;
+      animation-timing-function: linear;
+    }
+    74% {
+      top: 211px;
+      left: 44px;
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    75% {
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: step-end;
+    }
+    80% {
+      top: 190px;
+      left: 35px;
+      transform: scale(-1, 1);
+      animation-timing-function: step-end;
+    }
+    81% {
+      top: 187px;
+      left: 35px;
+      transform: scale(1, 1);
+      animation-timing-function: linear;
+    }
+    86% {
+      top: 169px;
+      left: 37px;
+      animation-timing-function: linear;
+    }
+    93% {
+      top: 153px;
+      left: 56px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    to {
+      top: 139px;
+      left: 77px;
+      opacity: 0;
+      transform: scale(1, 1);
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes ghostAnim4 {
+    from {
+      top: 458px;
+      left: 645px;
+      opacity: 0;
+      transform: scale(-1, 1);
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    7% {
+      top: 482px;
+      left: 623px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    14% {
+      top: 492px;
+      left: 601px;
+      animation-timing-function: linear;
+    }
+    20% {
+      top: 491px;
+      left: 579px;
+      animation-timing-function: linear;
+    }
+    26% {
+      top: 482px;
+      left: 556px;
+      animation-timing-function: linear;
+    }
+    32% {
+      top: 466px;
+      left: 539px;
+      animation-timing-function: linear;
+    }
+    38% {
+      top: 452px;
+      left: 521px;
+      animation-timing-function: linear;
+    }
+    44% {
+      top: 435px;
+      left: 506px;
+      animation-timing-function: linear;
+    }
+    50% {
+      top: 413px;
+      left: 504px;
+      animation-timing-function: linear;
+    }
+    56% {
+      top: 389px;
+      left: 504px;
+      animation-timing-function: linear;
+    }
+    62% {
+      top: 365px;
+      left: 504px;
+      animation-timing-function: linear;
+    }
+    68% {
+      top: 347px;
+      left: 490px;
+      animation-timing-function: linear;
+    }
+    74% {
+      top: 332px;
+      left: 474px;
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: linear;
+    }
+    75% {
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: step-end;
+    }
+    80% {
+      top: 325px;
+      left: 452px;
+      animation-timing-function: linear;
+    }
+    86% {
+      top: 328px;
+      left: 432px;
+      animation-timing-function: linear;
+    }
+    93% {
+      top: 336px;
+      left: 408px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    to {
+      top: 347px;
+      left: 392px;
+      opacity: 0;
+      transform: scale(-1, 1);
+      background-image: url("../images/monsterGhost_alternative.svg");
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes pacmanAnim {
+    from {
+      top: 301px;
+      left: 902px;
+      transform: rotate(-51deg);
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    7%, 11%, 16%, 20%, 24%, 28%, 32%, 36%, 40%, 44%, 48%, 52%, 56%, 60%, 64%, 68%, 72%, 76%, 80%, 84%, 88%, 92%, 97% {
+      background-image: url("../images/pacmanCircle.svg");
+      width: 26px;
+      animation-timing-function: step-start;
+    }
+    9%, 14%, 18%, 22%, 26%, 30%, 34%, 38%, 42%, 46%, 50%, 54%, 58%, 62%, 66%, 70%, 74%, 78%, 82%, 86%, 90%, 95% {
+      background-image: url("../images/pacman.svg");
+      width: 25px;
+      animation-timing-function: step-start;
+    }
+    7% {
+      top: 301px;
+      left: 902px;
+      opacity: 0;
+      transform: rotate(-51deg);
+      animation-timing-function: linear;
+    }
+    14% {
+      top: 320px;
+      left: 884px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    20% {
+      top: 333px;
+      left: 870px;
+      transform: rotate(-45deg);
+      animation-timing-function: linear;
+    }
+    26% {
+      top: 347px;
+      left: 854px;
+      animation-timing-function: linear;
+    }
+    32% {
+      top: 351px;
+      left: 832px;
+      transform: rotate(0deg);
+      animation-timing-function: linear;
+    }
+    38% {
+      top: 351px;
+      left: 808px;
+      animation-timing-function: linear;
+    }
+    44% {
+      top: 341px;
+      left: 787px;
+      animation-timing-function: linear;
+    }
+    50% {
+      top: 329px;
+      left: 768px;
+      animation-timing-function: linear;
+    }
+    56% {
+      top: 316px;
+      left: 748px;
+      transform: rotate(45deg);
+      animation-timing-function: linear;
+    }
+    62% {
+      top: 303px;
+      left: 728px;
+      animation-timing-function: linear;
+    }
+    68% {
+      top: 291px;
+      left: 709px;
+      animation-timing-function: linear;
+    }
+    74% {
+      top: 279px;
+      left: 692px;
+      animation-timing-function: linear;
+    }
+    80% {
+      top: 264px;
+      left: 671px;
+      animation-timing-function: linear;
+    }
+    86% {
+      top: 254px;
+      left: 652px;
+      animation-timing-function: linear;
+    }
+    90% {
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    93% {
+      top: 240px;
+      left: 634px;
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    to {
+      top: 244px;
+      left: 634px;
+      transform: rotate(45deg);
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes exPointAnim {
+    from, 43%, to {
+      opacity: 0;
+    }
+    44% {
+      opacity: 1;
+      animation-timing-function: step-end;
+    }
+    50% {
+      opacity: 0;
+      animation-timing-function: step-end;
+    }
+  }
+
+  .dots {
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      position: absolute;
+      background-image: url("../images/dots.svg");
+      background-size: cover;
+      width: 115px;
+      height: 60px;
+      top: 131px;
+      left: 333px;
+      transform: rotate(-2deg);
+    }
+
+    span {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $yellow;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        display: none;
+      }
+    }
+    .dot1 {
+      top: 330px;
+      left: 894px;
+      animation-name: dot1;
+    }
+    .dot2 {
+      top: 343px;
+      left: 880px;
+      animation-name: dot2;
+    }
+    .dot3 {
+      top: 357px;
+      left: 864px;
+      animation-name: dot3;
+    }
+    .dot4 {
+      top: 361px;
+      left: 842px;
+      animation-name: dot4;
+    }
+    .dot5 {
+      top: 361px;
+      left: 818px;
+      animation-name: dot5;
+    }
+    .dot6 {
+      top: 351px;
+      left: 797px;
+      animation-name: dot6;
+    }
+    .dot7 {
+      top: 339px;
+      left: 778px;
+      animation-name: dot7;
+    }
+    .dot8 {
+      top: 326px;
+      left: 758px;
+      animation-name: dot8;
+    }
+    .dot9 {
+      top: 313px;
+      left: 738px;
+      animation-name: dot9;
+    }
+    .dot10 {
+      top: 301px;
+      left: 719px;
+      animation-name: dot10;
+    }
+    .dot11 {
+      top: 281px;
+      left: 693px;
+      width: 21px;
+      height: 21px;
+      animation-name: dot11;
+    }
+    .dot12 {
+      top: 275px;
+      left: 679px;
+      animation-name: dot12;
+    }
+    .dot13 {
+      top: 263px;
+      left: 660px;
+      animation-name: dot13;
+    }
+    @keyframes dot1 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      13% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      14%, 93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot2 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      20% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      21% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot3 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      26% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      27% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot4 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      32% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      33% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot5 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      38% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      39% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot6 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      44% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      45% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot7 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      51% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot8 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      56% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      57% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot9 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      62% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      63% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot10 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      68% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      69% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot11 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      74% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      75% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot12 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      81% ,93% {
+        opacity: 0;
+      }
+    }
+    @keyframes dot13 {
+      from, 94%, to {
+        opacity: 1;
+      }
+      86% {
+        opacity: 1;
+        animation-timing-function: step-end;
+      }
+      87% ,93% {
+        opacity: 0;
+      }
+    }
+  }
+}

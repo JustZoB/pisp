@@ -1,0 +1,299 @@
+.contact {
+  .section__content {
+    display: flex;
+    align-items: center;
+  }
+
+  .robot {
+    position: relative;
+    width: 205px;
+    height: 195px;
+    margin-right: 100px;
+
+    .exPoint1 {
+      position: absolute;
+      width: 17px;
+      top: -15px;
+      right: -4px;
+      transform: rotate(15deg);
+      transition: 0.3s;
+    }
+
+    .exPoint2 {
+      position: absolute;
+      width: 17px;
+      top: 12px;
+      right: -26px;
+      transform: rotate(55deg);
+      transition: 0.3s;
+    }
+
+    &:hover {
+      .exPoint1 {
+        transform: rotate(15deg) translateY(-15px);
+      }
+      .exPoint2 {
+        transform: rotate(55deg) translateY(-15px);
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      width: 180px;
+      height: 174px;
+      margin-right: 60px;
+
+      &__image {
+        width: 180px;
+        height: 174px;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      display: none;
+    }
+  }
+
+  .social {
+    $block-border: 5px;
+
+    display: flex;
+    position: relative;
+    border: $block-border solid $blue;
+    padding: 42px 84px;
+
+    &:before,
+    &:after,
+    .angle1,
+    .angle2 {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 25px;
+    }
+
+    &:before {
+      height: 40px;
+      top: 0 - $block-border;
+      right: 0 - $block-border;
+      background-image: url("../images/angle_blue.svg");
+    }
+
+    &:after {
+      height: 40px;
+      bottom: 0 - $block-border;
+      left: 0 - $block-border;
+      transform: scale(-1, -1);
+      background-image: url("../images/angle_blue.svg");
+    }
+
+    .angle1 {
+      height: 25px;
+      top: 0 - $block-border;
+      left: 0 - $block-border;
+      background-image: url("../images/angle2_blue.svg");
+    }
+
+    .angle2 {
+      height: 25px;
+      bottom: 0 - $block-border;
+      right: 0 - $block-border;
+      transform: scale(-1, -1);
+      background-image: url("../images/angle2_blue.svg");
+    }
+
+    &__logo {
+      padding-right: 50px;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > a {
+        font-family: $font-press-start-2p;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      .messengers {
+        display: flex;
+
+        & > div:not(:last-child) {
+          margin-right: 12px;
+        }
+
+        a {
+          cursor: pointer;
+          font-size: 0;
+          padding-bottom: 25px;
+          padding-top: 25px;
+
+          &:hover {
+            padding-bottom: 37px;
+            img {
+              transform: translateY(-12px);
+            }
+          }
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+        }
+
+        .messengers__pacman {
+          display: none;
+          transform: scale(-1, 1);
+        }
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      padding: 36px 48px;
+
+      &__logo {
+        width: 180px;
+        padding-right: 35px;
+      }
+
+      &__links .messengers a {
+        padding-bottom: 22.5px;
+        padding-top: 22.5px;
+
+        &:hover {
+          padding-bottom: 30.5px;
+          img {
+            transform: translateY(-8px);
+          }
+        }
+
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      padding: 36px 48px;
+
+      &__links {
+        & > a {
+          font-size: 18px;
+        }
+
+        .messengers {
+          & > div:not(:last-child) {
+            margin-right: 9px;
+          }
+
+          a {
+            padding-bottom: 20px;
+            padding-top: 20px;
+
+            &:hover {
+              padding-bottom: 28px;
+            }
+
+            &:not(:last-child) {
+              margin-right: 9px;
+            }
+
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      padding: 30px 36px;
+
+      &__logo {
+        width: 150px;
+        padding-right: 35px;
+      }
+
+      &__links {
+        & > a {
+          font-size: 16px;
+        }
+
+        .messengers {
+          & > div:not(:last-child) {
+            margin-right: 9px;
+          }
+
+          a {
+            padding-bottom: 16.5px;
+            padding-top: 16.5px;
+
+            &:hover {
+              padding-bottom: 24.5px;
+            }
+
+            img {
+              width: 33px;
+              height: 33px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      flex-direction: column;
+      align-items: center;
+      padding: 25px 20px;
+
+      &__logo {
+        width: 180px;
+        padding-right: 0;
+        margin-bottom: 15px;
+      }
+
+      &__links {
+        & > a {
+          font-size: 14px;
+          padding-bottom: 15px;
+        }
+
+        .messengers {
+          flex-direction: column;
+          align-items: center;
+
+          & > div {
+            &:not(:last-child) {
+              margin-bottom: 8px;
+              margin-right: 0;
+            }
+
+            a {
+              &:hover {
+                padding: 0;
+
+                img {
+                  transform: translateY(0);
+                }
+              }
+
+              img {
+                width: 50px;
+                height: 50px;
+              }
+            }
+            .messengers__pacman {
+              display: inline-block;
+              cursor: unset;
+              width: 50px;
+              height: 50px;
+              padding: 0;
+
+              &:hover {
+                transform: translateY(0) scale(-1, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

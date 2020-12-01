@@ -1,0 +1,642 @@
+.inside {
+  overflow-x: hidden;
+
+  .section__content {
+    $border: 5px;
+    position: relative;
+    width: 1170px;
+    height: 600px;
+    margin: 0;
+
+    .specification {
+      position: absolute;
+      padding: 20px;
+      transition: 1s;
+      opacity: 0;
+
+      p {
+        font-family: $font-press-start-2p;
+        font-size: 20px;
+        line-height: 20px;
+        padding: 0 $border*2;
+      }
+
+      .line,
+      .line:before,
+      .line:after {
+        display: inline-block;
+        background-color: $purple;
+        border-radius: $border/2;
+        filter: drop-shadow(3.18647px 3.18647px 4.77971px $blue);
+        transition: 0.3s;
+      }
+
+      .line {
+        position: relative;
+        width: 100%;
+        height: $border;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .line:before {
+        position: absolute;
+        content: "";
+        height: $border;
+        z-index: 1;
+        width: 0;
+      }
+
+      .line:after {
+        position: absolute;
+        content: "";
+        width: $border*2 + $border/2;
+        height: $border*2 + $border/2;
+        border-radius: 50%;
+        opacity: 0;
+      }
+
+      &:nth-child(1) {
+        $line: 150px;
+
+        top: 40px;
+        left: -32px;
+        transform: translateX(-300px);
+
+        .line {
+          &:before {
+            transform: rotate(-135deg) translate($border, $border/2);
+            transform-origin: bottom right;
+            bottom: 0;
+            right: 0;
+            filter: drop-shadow(3.18647px -1.81353px 4.77971px $blue);
+          }
+          &:after {
+            right: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+            transform: translate(50%, 50%);
+            filter: drop-shadow(1.18647px 1.18647px 3.77971px $blue);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &:nth-child(2) {
+        $line: 60px;
+
+        top: 202px;
+        left: -6px;
+        transform: translateX(-300px);
+
+        p {
+          padding-right: 85px;
+        }
+
+        .line {
+          &:before {
+            transform: rotate(-135deg) translate($border, $border/2);
+            transform-origin: bottom right;
+            bottom: 0;
+            right: 0;
+            filter: drop-shadow(3.18647px -1.81353px 4.77971px $blue);
+          }
+          &:after {
+            right: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+            transform: translate(50%, 50%);
+            filter: drop-shadow(1.18647px 1.18647px 3.77971px $blue);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &:nth-child(3) {
+        $line: 120px;
+
+        bottom: 110px;
+        left: 48px;
+        transform: translateX(-300px);
+
+        .line {
+          &:before {
+            transform: rotate(135deg) translate($border, -$border/2);
+            transform-origin: top right;
+            top: 0;
+            right: 0;
+            filter: drop-shadow(-3.81353px -3.81353px 4.77971px $blue);
+          }
+          &:after {
+            right: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+            transform: translate(50%, -50%);
+            filter: drop-shadow(-3.81353px -3.81353px 3.77971px $blue);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &:nth-child(4) {
+        $line: 190px;
+
+        bottom: 0;
+        right: 130px;
+        transform: translateX(300px);
+
+        p {
+          padding-left: 60px;
+        }
+
+        .line {
+          &:before {
+            transform: rotate(-45deg) translate(-$border/2, 0);
+            transform-origin: top left;
+            top: 0;
+            left: 0;
+            filter: drop-shadow(3.81353px 3.81353px 4.77971px $blue);
+          }
+          &:after {
+            left: 0 + $line/10*7;
+            top: 0 - $line/10*7;
+            transform: translate(-50%, -25%);
+            filter: drop-shadow(3.81353px 3.81353px 3.77971px $blue);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &:nth-child(5) {
+        $line: 60px;
+
+        top: 60px;
+        right: 28px;
+        transform: translateX(300px);
+
+        p {
+          padding-left: 40px;
+        }
+
+        .line {
+          &:before {
+            transform: rotate(135deg) translate(-$border, $border/2);
+            transform-origin: left bottom;
+            left: 0;
+            bottom: 0;
+            filter: drop-shadow(-2.81353px -2.81353px 4.77971px $blue);
+          }
+          &:after {
+            left: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+            transform: translate(-25%, 40%);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &:nth-child(6) {
+        $line: 30px;
+
+        top: 284px;
+        right: -36px;
+        transform: translateX(300px);
+
+        .line {
+          &:before {
+            transform: rotate(-135deg) translate(-$border, -$border/2);
+            transform-origin: left top;
+            left: 0;
+            top: 0;
+            filter: drop-shadow(-1.81353px -1.81353px 4.77971px $blue);
+          }
+          &:after {
+            left: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+            transform: translate(-40%, -50%);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &:nth-child(7) {
+        $line: 220px;
+
+        bottom: 110px;
+        right: 58px;
+        transform: translateX(300px);
+
+        .line {
+          &:before {
+            transform: rotate(-135deg) translate(-$border, -$border/2);
+            transform-origin: left top;
+            left: 0;
+            top: 0;
+            filter: drop-shadow(-1.81353px -1.81353px 4.77971px $blue);
+          }
+          &:after {
+            left: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+            transform: translate(-40%, -50%);
+          }
+        }
+
+        &.before .line:before {
+          width: $line;
+        }
+      }
+
+      &.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &.lineActive .line {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      &.after .line:after {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      width: 960px;
+      height: 500px;
+
+      .specification {
+        p {
+          font-size: 16px;
+          line-height: 16px;
+        }
+
+        &:nth-child(1) {
+          $line: 130px;
+
+          top: 35px;
+          left: -17px;
+
+          .line:after {
+            right: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(2) {
+          $line: 60px;
+
+          top: 158px;
+          left: 0;
+
+          p {
+            padding-right: 60px;
+          }
+
+          .line:after {
+            right: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(3) {
+          $line: 120px;
+
+          bottom: 78px;
+          left: 32px;
+
+          .line:after {
+            right: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(4) {
+          $line: 170px;
+
+          bottom: 0;
+          right: 130px;
+
+          .line:after {
+            left: 0 + $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(5) {
+          $line: 60px;
+
+          top: 27px;
+          right: 45px;
+
+          .line:after {
+            left: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(6) {
+          $line: 30px;
+
+          top: 242px;
+          right: -16px;
+
+          .line:after {
+            left: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(7) {
+          $line: 185px;
+
+          bottom: 86px;
+          right: 48px;
+
+          .line:after {
+            left: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      width: 700px;
+      height: 420px;
+
+      .specification {
+        p {
+          font-size: 12px;
+          line-height: 12px;
+        }
+
+        &:nth-child(1) {
+          $line: 100px;
+
+          top: 44px;
+          left: -12px;
+
+          .line:after {
+            right: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(2) {
+          $line: 50px;
+
+          top: 131px;
+          left: -5px;
+
+          p {
+            padding-right: 20px;
+          }
+
+          .line:after {
+            right: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(3) {
+          $line: 90px;
+
+          bottom: 78px;
+          left: 0;
+
+          .line:after {
+            right: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(4) {
+          $line: 130px;
+
+          bottom: 0;
+          right: 56px;
+
+          .line:after {
+            left: 0 + $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(5) {
+          $line: 50px;
+
+          top: 30px;
+          right: -10px;
+
+          .line:after {
+            left: 0 - $line/10*7;
+            bottom: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(6) {
+          $line: 25px;
+
+          top: 196px;
+          right: -36px;
+
+          .line:after {
+            left: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+        &:nth-child(7) {
+          $line: 145px;
+
+          bottom: 75px;
+          right: 14px;
+
+          .line:after {
+            left: 0 - $line/10*7;
+            top: 0 - $line/10*7;
+          }
+
+          &.before .line:before {
+            width: $line;
+          }
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      width: 500px;
+      height: 270px;
+
+      .specification {
+        visibility: hidden;
+
+        .line,
+        .line:before,
+        .line:after {
+          filter: none !important;
+        }
+
+        .line:after {
+          visibility: visible;
+          width: unset;
+          height: unset;
+          border-radius: unset;
+          opacity: 1;
+          background-color: transparent;
+          background-size: cover;
+          width: 20px;
+          height: 20px;
+        }
+
+        &:nth-child(1) {
+          top: -26px;
+          left: -130px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_1.svg");
+          }
+        }
+        &:nth-child(2) {
+          top: 58px;
+          left: -49px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_2.svg");
+          }
+        }
+        &:nth-child(3) {
+          bottom: 3px;
+          left: -71px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_3.svg");
+          }
+        }
+        &:nth-child(4) {
+          bottom: -36;
+          right: -64px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_4.svg");
+          }
+        }
+        &:nth-child(5) {
+          top: -13px;
+          right: -84px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_5.svg");
+          }
+        }
+        &:nth-child(6) {
+          top: 115px;
+          right: -102px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_6.svg");
+          }
+        }
+        &:nth-child(7) {
+          bottom: 25px;
+          right: -58px;
+
+          .line:after {
+            background-image: url("../images/insideNumber_7.svg");
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: none;
+    font-family: $font-press-start-2p;
+    font-size: 12px;
+    line-height: 18px;
+    list-style-type: decimal;
+    padding-left: 46px;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      display: block;
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      background: radial-gradient(50% 50% at 50% 50%, $blue 39.06%, transparent 100%);
+      @media (max-width: map-get($grid-breakpoints, 'xl')) {
+        width: 500px;
+      }
+      @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        width: 400px;
+      }
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        width: 270px;
+      }
+    }
+  }
+}
