@@ -2,6 +2,10 @@
   padding-top: 160px;
   overflow-x: hidden;
 
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    padding-top: 130px;
+  }
+
   &__image {
     position: relative;
 
