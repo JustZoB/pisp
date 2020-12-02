@@ -78,14 +78,15 @@ function refreshScore() {
 }
 
 function setToStart() {
-  characterPositionX = 3;
   characterPositionY = 15;
+  characterPositionX = 3;
+
   if (document.documentElement.clientWidth >= xl) {
-    character.style.top = "454px";
-    character.style.left = "94px";
-  } else {
-    character.style.top = "364px";
-    character.style.left = "76px";
+    character.style.top = characterPositionY * pixelFL + 4 + "px";
+    character.style.left = characterPositionX * pixelFL + 4 + "px";
+  } else if (document.documentElement.clientWidth >= lg) {
+    character.style.top = characterPositionY * pixelXL + 4 + "px";
+    character.style.left = characterPositionX * pixelXL + 4 + "px";
   }
 }
 
@@ -154,66 +155,74 @@ function isThisNormalSquere() {
 }
 
 function moveUp() {
-  characterPositionY--;
-  if (isThisNormalSquere()) {
-    let topPX = window.getComputedStyle(character, null).getPropertyValue("top");
-    let top = 0;
+  if (document.documentElement.clientWidth >= lg) {
+    characterPositionY--;
+    if (isThisNormalSquere()) {
+      let topPX = window.getComputedStyle(character, null).getPropertyValue("top");
+      let top = 0;
 
-    if (document.documentElement.clientWidth >= xl) {
-      top = +topPX.substring(0, topPX.length - 2) - pixelFL;
-    } else {
-      top = +topPX.substring(0, topPX.length - 2) - pixelXL;
+      if (document.documentElement.clientWidth >= xl) {
+        top = +topPX.substring(0, topPX.length - 2) - pixelFL;
+      } else {
+        top = +topPX.substring(0, topPX.length - 2) - pixelXL;
+      }
+
+      character.style.top = top + "px";
     }
-
-    character.style.top = top + "px";
   }
 }
 
 function moveDown() {
-  characterPositionY++;
-  if (isThisNormalSquere()) {
-    let topPX = window.getComputedStyle(character, null).getPropertyValue("top");
-    let top = 0;
+  if (document.documentElement.clientWidth >= lg) {
+    characterPositionY++;
+    if (isThisNormalSquere()) {
+      let topPX = window.getComputedStyle(character, null).getPropertyValue("top");
+      let top = 0;
 
-    if (document.documentElement.clientWidth >= xl) {
-      top = +topPX.substring(0, topPX.length - 2) + pixelFL;
-    } else {
-      top = +topPX.substring(0, topPX.length - 2) + pixelXL;
+      if (document.documentElement.clientWidth >= xl) {
+        top = +topPX.substring(0, topPX.length - 2) + pixelFL;
+      } else {
+        top = +topPX.substring(0, topPX.length - 2) + pixelXL;
+      }
+
+      character.style.top = top + "px";
     }
-
-    character.style.top = top + "px";
   }
 }
 
 function moveLeft() {
-  characterPositionX--;
-  if (isThisNormalSquere()) {
-    let leftPX = window.getComputedStyle(character, null).getPropertyValue("left");
-    let left = 0;
+  if (document.documentElement.clientWidth >= lg) {
+    characterPositionX--;
+    if (isThisNormalSquere()) {
+      let leftPX = window.getComputedStyle(character, null).getPropertyValue("left");
+      let left = 0;
 
-    if (document.documentElement.clientWidth >= xl) {
-      left = +leftPX.substring(0, leftPX.length - 2) - pixelFL;
-    } else {
-      left = +leftPX.substring(0, leftPX.length - 2) - pixelXL;
+      if (document.documentElement.clientWidth >= xl) {
+        left = +leftPX.substring(0, leftPX.length - 2) - pixelFL;
+      } else {
+        left = +leftPX.substring(0, leftPX.length - 2) - pixelXL;
+      }
+
+      character.style.left = left + "px";
     }
-
-    character.style.left = left + "px";
   }
 }
 
 function moveRight() {
-  characterPositionX++;
-  if (isThisNormalSquere()) {
-    let leftPX = window.getComputedStyle(character, null).getPropertyValue("left");
-    let left = 0;
+  if (document.documentElement.clientWidth >= lg) {
+    characterPositionX++;
+    if (isThisNormalSquere()) {
+      let leftPX = window.getComputedStyle(character, null).getPropertyValue("left");
+      let left = 0;
 
-    if (document.documentElement.clientWidth >= xl) {
-      left = +leftPX.substring(0, leftPX.length - 2) + pixelFL;
-    } else {
-      left = +leftPX.substring(0, leftPX.length - 2) + pixelXL;
+      if (document.documentElement.clientWidth >= xl) {
+        left = +leftPX.substring(0, leftPX.length - 2) + pixelFL;
+      } else {
+        left = +leftPX.substring(0, leftPX.length - 2) + pixelXL;
+      }
+
+      character.style.left = left + "px";
     }
-
-    character.style.left = left + "px";
   }
 }
 
@@ -251,10 +260,4 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-if (document.documentElement.clientWidth >= lg) {
-  setToStart();
-}
-newSkin();
-refreshCoins();
-refreshLifes();
-refreshScore();
+newGame();
