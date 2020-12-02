@@ -102,6 +102,10 @@
 
     &__logo {
       padding-right: 50px;
+
+      &:hover {
+        filter: drop-shadow(2px 2px 0px $pink);
+      }
     }
 
     &__links {
@@ -113,6 +117,10 @@
         font-family: $font-press-start-2p;
         text-align: center;
         padding-bottom: 10px;
+
+        &:hover {
+          text-shadow: 2px 2px 0 $pink;
+        }
       }
 
       .messengers {
