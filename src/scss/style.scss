@@ -42,7 +42,7 @@ h5,
 h6 {
   font-family: $font-press-start-2p;
   color: $yellow;
-  text-shadow: 2px 2px 0 $pink;
+  text-shadow: 4px 4px 0 $pink;
   font-weight: normal;
 }
 
@@ -65,6 +65,7 @@ h2 {
   @media (max-width: map-get($grid-breakpoints, 'md')) {
     font-size: 30px;
     line-height: 38px;
+    text-shadow: 2px 2px 0 $pink;
   }
   @media (max-width: map-get($grid-breakpoints, 'md')) {
     font-size: 26px;
