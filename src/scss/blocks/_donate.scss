@@ -706,6 +706,10 @@
     }
   }
   @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    .section__content {
+      width: 100%;
+    }
+
     .labyrinth,
     .coins,
     .character {
