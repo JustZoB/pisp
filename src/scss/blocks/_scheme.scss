@@ -215,20 +215,16 @@
     86% {
       top: 30px;
       left: 469px;
+      opacity: 1;
       animation-timing-function: linear;
     }
     90% {
-      opacity: 1;
+      opacity: 0;
       animation-timing-function: linear;
     }
     93% {
       top: 45px;
       left: 489px;
-      opacity: 0.5;
-      animation-timing-function: linear;
-    }
-    95% {
-      opacity: 0;
       animation-timing-function: linear;
     }
     to {
@@ -252,12 +248,13 @@
     7% {
       top: 20px;
       left: 640px;
-      opacity: 1;
+      opacity: 0;
       animation-timing-function: linear;
     }
     14% {
       top: 6px;
       left: 663px;
+      opacity: 1;
       animation-timing-function: linear;
     }
     20% {
@@ -656,6 +653,10 @@
     }
     90% {
       opacity: 1;
+      animation-timing-function: linear;
+    }
+    90.01% {
+      opacity: 0;
       animation-timing-function: linear;
     }
     93% {
