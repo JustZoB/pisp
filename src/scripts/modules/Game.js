@@ -8,6 +8,10 @@ const down = blockDonate.querySelector(".down");
 const left = blockDonate.querySelector(".left");
 const right = blockDonate.querySelector(".right");
 
+const xl = 1366;
+const lg = 992;
+const pixelFL = 30;
+const pixelXL = 24;
 let countlifes = 5;
 let scoreNumber = 0;
 let characterPositionX = 3;
@@ -76,7 +80,7 @@ function refreshScore() {
 function setToStart() {
   characterPositionX = 3;
   characterPositionY = 15;
-  if (document.documentElement.clientWidth >= 1366) {
+  if (document.documentElement.clientWidth >= xl) {
     character.style.top = "454px";
     character.style.left = "94px";
   } else {
@@ -136,6 +140,11 @@ function isThisCoin() {
   return false;
 }
 
+function gameCycle() {
+  isThisCoin();
+  isThisWin();
+}
+
 function isThisNormalSquere() {
   if (isThisEndOfMap() || isThisWall()) {
     return false;
@@ -150,10 +159,10 @@ function moveUp() {
     let topPX = window.getComputedStyle(character, null).getPropertyValue("top");
     let top = 0;
 
-    if (document.documentElement.clientWidth >= 1366) {
-      top = +topPX.substring(0, topPX.length - 2) - 30;
+    if (document.documentElement.clientWidth >= xl) {
+      top = +topPX.substring(0, topPX.length - 2) - pixelFL;
     } else {
-      top = +topPX.substring(0, topPX.length - 2) - 24;
+      top = +topPX.substring(0, topPX.length - 2) - pixelXL;
     }
 
     character.style.top = top + "px";
@@ -166,10 +175,10 @@ function moveDown() {
     let topPX = window.getComputedStyle(character, null).getPropertyValue("top");
     let top = 0;
 
-    if (document.documentElement.clientWidth >= 1366) {
-      top = +topPX.substring(0, topPX.length - 2) + 30;
+    if (document.documentElement.clientWidth >= xl) {
+      top = +topPX.substring(0, topPX.length - 2) + pixelFL;
     } else {
-      top = +topPX.substring(0, topPX.length - 2) + 24;
+      top = +topPX.substring(0, topPX.length - 2) + pixelXL;
     }
 
     character.style.top = top + "px";
@@ -182,10 +191,10 @@ function moveLeft() {
     let leftPX = window.getComputedStyle(character, null).getPropertyValue("left");
     let left = 0;
 
-    if (document.documentElement.clientWidth >= 1366) {
-      left = +leftPX.substring(0, leftPX.length - 2) - 30;
+    if (document.documentElement.clientWidth >= xl) {
+      left = +leftPX.substring(0, leftPX.length - 2) - pixelFL;
     } else {
-      left = +leftPX.substring(0, leftPX.length - 2) - 24;
+      left = +leftPX.substring(0, leftPX.length - 2) - pixelXL;
     }
 
     character.style.left = left + "px";
@@ -198,58 +207,51 @@ function moveRight() {
     let leftPX = window.getComputedStyle(character, null).getPropertyValue("left");
     let left = 0;
 
-    if (document.documentElement.clientWidth >= 1366) {
-      left = +leftPX.substring(0, leftPX.length - 2) + 30;
+    if (document.documentElement.clientWidth >= xl) {
+      left = +leftPX.substring(0, leftPX.length - 2) + pixelFL;
     } else {
-      left = +leftPX.substring(0, leftPX.length - 2) + 24;
+      left = +leftPX.substring(0, leftPX.length - 2) + pixelXL;
     }
 
     character.style.left = left + "px";
   }
 }
 
-up.addEventListener("click", () => {
+function moveUpHandler() {
   moveUp();
-  isThisCoin();
-  isThisWin();
-});
-down.addEventListener("click", () => {
+  gameCycle();
+}
+function moveDownHandler() {
   moveDown();
-  isThisCoin();
-  isThisWin();
-});
-left.addEventListener("click", () => {
+  gameCycle();
+}
+function moveLeftHandler() {
   moveLeft();
-  isThisCoin();
-  isThisWin();
-});
-right.addEventListener("click", () => {
+  gameCycle();
+}
+function moveRightHandler() {
   moveRight();
-  isThisCoin();
-  isThisWin();
-});
+  gameCycle();
+}
+
+up.addEventListener("click", moveUpHandler);
+down.addEventListener("click", moveDownHandler);
+left.addEventListener("click", moveLeftHandler);
+right.addEventListener("click", moveRightHandler);
 
 document.addEventListener('keydown', function (event) {
   if (event.code == 'KeyW') {
-    moveUp();
-    isThisCoin();
-    isThisWin();
+    moveUpHandler();
   } else if (event.code == 'KeyS') {
-    moveDown();
-    isThisCoin();
-    isThisWin();
+    moveDownHandler();
   } else if (event.code == 'KeyA') {
-    moveLeft();
-    isThisCoin();
-    isThisWin();
+    moveLeftHandler();
   } else if (event.code == 'KeyD') {
-    moveRight();
-    isThisCoin();
-    isThisWin();
+    moveRightHandler();
   }
 });
 
-if (document.documentElement.clientWidth >= 992) {
+if (document.documentElement.clientWidth >= lg) {
   setToStart();
 }
 newSkin();
