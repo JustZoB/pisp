@@ -66,6 +66,10 @@ h2 {
     font-size: 30px;
     line-height: 38px;
   }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    font-size: 26px;
+    line-height: 34px;
+  }
 }
 
 h3 {
