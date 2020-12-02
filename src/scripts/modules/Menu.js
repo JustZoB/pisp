@@ -20,8 +20,8 @@ links.forEach(link => {
     }
 
     if (document.documentElement.clientWidth < 992) {
-      menu.classList.toggle("active");
-      body.classList.toggle("disableScroll");
+      menu.classList.remove("active");
+      body.classList.remove("disableScroll");
       setTimeout(function () {
         scroll({
           top: scrollTo.offsetTop,
