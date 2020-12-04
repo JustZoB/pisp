@@ -39,7 +39,6 @@
       a {
         cursor: pointer;
         margin-top: 10px;
-        margin-right: 30px;
         padding-bottom: 5px;
         border-bottom: 5px solid transparent;
 
@@ -55,6 +54,10 @@
 
         &:hover {
           border-bottom: 5px solid $blue;
+        }
+
+        &:not(:last-child) {
+          margin-right: 30px;
         }
       }
 
@@ -151,13 +154,16 @@
     &__nav {
       ul {
         a {
-          margin-right: 20px;
           margin-top: 10px;
           padding-bottom: 5px;
 
           li {
             font-size: 12px;
             line-height: 18px;
+          }
+
+          &:not(:last-child) {
+            margin-right: 20px;
           }
         }
       }
@@ -247,6 +253,10 @@
           &:hover {
             border-bottom: 0;
             background-color: $dark-blue;
+          }
+
+          &:not(:last-child) {
+            margin-right: 0;
           }
         }
       }

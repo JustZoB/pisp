@@ -1,9 +1,17 @@
 .donate {
+  position: relative;
+
   .section__content {
     align-items: center;
     justify-content: center;
     width: 1170px;
     height: 480px;
+
+    h2 {
+      margin: 20px 0 0 0;
+      font-size: 46px;
+      line-height: 50px;
+    }
   }
 
   .controller {
@@ -283,6 +291,25 @@
     }
   }
 
+  .won,
+  .lose {
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+    width: 420px;
+    height: auto;
+    top: 293px;
+
+    &.show {
+      opacity: 1;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      width: 320px;
+      top: 264px;
+    }
+  }
+
   .labyrinth {
     position: absolute;
   }
@@ -422,6 +449,11 @@
     .section__content {
       width: 936px;
       height: 384px;
+
+      h2 {
+        font-size: 36px;
+        line-height: 40px;
+      }
     }
 
     .labyrinth {
@@ -514,6 +546,8 @@
     }
   }
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    display: none;
+
     .section__content {
       width: 741px;
       height: 304px;

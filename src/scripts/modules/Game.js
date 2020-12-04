@@ -8,6 +8,9 @@ const down = blockDonate.querySelector(".down");
 const left = blockDonate.querySelector(".left");
 const right = blockDonate.querySelector(".right");
 
+const won = blockDonate.querySelector(".won");
+const lose = blockDonate.querySelector(".lose");
+
 const xl = 1366;
 const lg = 992;
 const pixelFL = 30;
@@ -50,6 +53,11 @@ function dead() {
   lifes.querySelector(".life").remove();
   if (countlifes <= 0) {
     newGame();
+
+    lose.classList.add("show");
+    setTimeout(function () {
+      lose.classList.remove("show");
+    }, 3000);
   }
 }
 
@@ -115,7 +123,10 @@ function isThisWall() {
 function isThisWin() {
   if (maze[characterPositionY][characterPositionX] === 2) {
     newGame();
-    alert("YOU WON");
+    won.classList.add("show");
+    setTimeout(function () {
+      won.classList.remove("show");
+    }, 5000);
 
     return true;
   }
