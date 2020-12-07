@@ -1,0 +1,12 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  script:
+    - npm i
+    - npm run build
+  artifacts:
+    paths:
+      - build
+  only:
+    - master
