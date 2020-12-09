@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: [ path.resolve('src', 'scripts', 'index.js')],
@@ -11,6 +12,9 @@ module.exports = {
   },
   devServer: {
     contentBase: './build',
+    host: '0.0.0.0',
+    port: 8080,
+    disableHostCheck: true,
   },
   module: {
     rules: [
@@ -33,7 +37,10 @@ module.exports = {
         loader: 'file-loader',
         options: {
           outputPath: 'images',
-          esModule: false
+          esModule: false,
+          gifsicle: {
+            interlaced: false,
+          }
         },
       },
       {
@@ -51,7 +58,10 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
+    ],
   },
   plugins: [
     new CopyPlugin({
@@ -62,6 +72,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: ('style.css')
-    })
+    }),
   ]
 };

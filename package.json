@@ -8,7 +8,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production run-s clean build-webpack",
     "build-webpack": "webpack --mode=production",
-    "clean": "rimraf public",
+    "clean": "rimraf build",
     "watch-webpack": "webpack --mode=development --watch",
     "server": "webpack-dev-server",
     "watch": "cross-env NODE_ENV=development npm run clean && run-p watch-webpack server"
@@ -18,15 +18,14 @@
     "url": "git@gitlab.com:cimpleo/pisp_group/landing.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@webpack-cli/serve": "^1.1.0",
-    "autoprefixer": "^10.0.1",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "autoprefixer": "^10.1.0",
     "browser-sync": "^2.26.7",
-    "copy-webpack-plugin": "^6.2.0",
-    "cross-env": "^7.0.2",
+    "copy-webpack-plugin": "^6.4.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^4.3.0",
-    "extract-text-webpack-plugin": "^4.0.0 || ^4.0.0-beta.0",
+    "css-minimizer-webpack-plugin": "^1.1.5",
     "file-loader": "^6.1.0",
     "group-css-media-queries-loader": "^3.0.2",
     "mini-css-extract-plugin": "^0.12.0",
@@ -47,8 +46,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "babel-loader": "^8.1.0",
-    "core-js": "^3.6.5",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.8.1",
     "lazysizes": "^5.2.2"
   }
 }
