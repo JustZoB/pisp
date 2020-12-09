@@ -5,12 +5,13 @@ variables:
     DOCKER_DRIVER: overlay2
     
 pages:
-  script:
-    - yarn install --ignore-optional --silent --ignore-engines --non-interactive
-    - yarn run build
+    script:
+        - yarn install --ignore-optional --silent --ignore-engines --non-interactive
+        - yarn run build
 
-artifacts:
-  paths:
-    - build
-  only:
-    - master
+    artifacts:
+        paths:
+            - build
+
+    only:
+        - master
