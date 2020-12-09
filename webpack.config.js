@@ -7,11 +7,11 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 module.exports = {
   entry: [ path.resolve('src', 'scripts', 'index.js')],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './build',
+    contentBase: './public',
     host: '0.0.0.0',
     port: 8080,
     disableHostCheck: true,
