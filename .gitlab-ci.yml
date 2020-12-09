@@ -4,7 +4,13 @@ cache:
   paths:
   - node_modules/
 
-test_app:
+pisp:
   script:
     - npm install
     - npm run build
+
+artifacts:
+    paths:
+      - build
+  only:
+    - master
