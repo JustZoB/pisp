@@ -9,6 +9,19 @@
   h2 {
     font-size: 50px;
     line-height: 58px;
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      font-size: 40px;
+      line-height: 48px;
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      font-size: 26px;
+      line-height: 34px;
+    }
   }
 
   &__image {
