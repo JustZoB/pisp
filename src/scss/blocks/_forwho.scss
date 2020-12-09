@@ -1,0 +1,540 @@
+
+
+.forwho {
+  .section__content {
+    align-items: center;
+  }
+
+  .robotBlock {
+    position: relative;
+    width: 345px;
+    height: 619px;
+
+    @keyframes robotAnimation {
+      from {
+        top: -15px;
+        animation-timing-function: ease-in;
+      }
+      to {
+        top: 10px;
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes wowAnimation {
+      from {
+        transform: rotate(-33deg) translateY(-8px);
+        animation-timing-function: ease-in;
+      }
+      to {
+        transform: rotate(-33deg) translateY(15px);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes gamepadAnimation {
+      from {
+        top: 320px;
+        animation-timing-function: ease-in;
+      }
+      to {
+        top: 355px;
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes exAnim1 {
+      from {
+        transform: rotate(20deg) translateY(-8px);
+        animation-timing-function: ease-in;
+      }
+      to {
+        transform: rotate(20deg) translateY(15px);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes exAnim2 {
+      from {
+        transform: rotate(40deg) translateY(-8px);
+        animation-timing-function: ease-in;
+      }
+      to {
+        transform: rotate(40deg) translateY(15px);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes lineAnim1 {
+      from {
+        transform: rotate(-105deg) translateY(8px);
+        animation-timing-function: ease-in;
+      }
+      to {
+        transform: rotate(-105deg) translateY(-15px);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes lineAnim2 {
+      from {
+        transform: rotate(30deg) translateY(-8px);
+        animation-timing-function: ease-in;
+      }
+      to {
+        transform: rotate(30deg) translateY(15px);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes lineAnim3 {
+      from {
+        transform: rotate(-15deg) translateY(-8px);
+        animation-timing-function: ease-in;
+      }
+      to {
+        transform: rotate(-15deg) translateY(15px);
+        animation-timing-function: ease-in;
+      }
+    }
+
+    &_robot,
+    &_exPoint1,
+    &_exPoint2,
+    &_wow,
+    &_gamepad,
+    &_line1,
+    &_line2,
+    &_line3 {
+      position: absolute;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    &_robot {
+      filter: drop-shadow(3.18647px 3.18647px 4.77971px $purple);
+      left: 0;
+      animation-name: robotAnimation;
+    }
+
+    &_exPoint1 {
+      right: 79px;
+      top: -8px;
+      animation-name: exAnim1;
+    }
+
+    &_exPoint2 {
+      right: 41px;
+      top: 22px;
+      animation-name: exAnim2;
+    }
+
+    &_wow {
+      left: -53px;
+      top: 43px;
+      width: 120px;
+      animation-name: wowAnimation;
+    }
+
+    &_gamepad {
+      transform: rotate(30deg);
+      right: -10px;
+      animation-name: gamepadAnimation;
+    }
+
+    &_line1 {
+      left: -43px;
+      bottom: -3px;
+      animation-name: lineAnim1;
+    }
+
+    &_line2 {
+      left: -13px;
+      bottom: -38px;
+      animation-name: lineAnim2;
+    }
+
+    &_line3 {
+      left: 35px;
+      bottom: -40px;
+      animation-name: lineAnim3;
+    }
+  }
+
+  .textBlocks {
+    &__block {
+      $pixel: 13px;
+
+      display: flex;
+      align-items: flex-end;
+
+      &:not(:first-child) {
+        margin-top: 50px;
+      }
+      &:nth-child(1) {
+        margin-left: 20px;
+      }
+      &:nth-child(2) {
+        margin-left: 60px;
+      }
+      &:nth-child(3) {
+        margin-left: 0;
+      }
+
+      .number {
+        height: $pixel*7;
+      }
+
+      &_text {
+        $width: 500px;
+        $height: 90px;
+        $color1: $dark-blue;
+        $color2: $pink;
+
+        margin: $pixel 0 $pixel $pixel;
+
+        div {
+          width: $width;
+          height: $height + $pixel*4;
+
+          p {
+            padding: 0 60px;
+          }
+        }
+
+        .background {
+          top: $pixel*2;
+
+          &:before {
+            background-color: $color1;
+            width: $width;
+            height: $height;
+            box-shadow:
+              0 $pixel*-2 0 $pixel*-1 $color1,
+              0 $pixel*2  0 $pixel*-1 $color1,
+              0 $pixel*-4 0 $pixel*-2 $color1,
+              0 $pixel*4  0 $pixel*-2 $color1;
+          }
+
+          &:after {
+            background-color: $color2;
+            width: $width + $pixel;
+            height: $height + $pixel;
+            box-shadow:
+              0 $pixel*-2 0 $pixel*-1 $color2,
+              0  $pixel*2 0 $pixel*-1 $color2,
+              0 $pixel*-4 0 $pixel*-2 $color2,
+              0  $pixel*4 0 $pixel*-2 $color2;
+          }
+        }
+      }
+    }
+  }
+
+  .ghosts {
+    position: relative;
+    width: 258px;
+    height: 10px;
+    background: url("../images/dot.svg") repeat-x;
+    float: right;
+    margin-top: 30px;
+
+    .ghost1,
+    .ghost2,
+    .ghost3 {
+      position: absolute;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      background-size: cover;
+      width: 32px;;
+      height: 30px;
+      top: -11px;
+    }
+
+    .ghost1 {
+      background-image: url("../images/monsterGhost1.svg");
+      left: 40px;
+      animation-name: ghostsLeftRight1;
+    }
+    .ghost2 {
+      background-image: url("../images/monsterGhost3.svg");
+      left: 100px;
+      animation-name: ghostsLeftRight2;
+    }
+    .ghost3 {
+      background-image: url("../images/monsterGhost4.svg");
+      left: 160px;
+      animation-name: ghostsLeftRight3;
+    }
+
+    @keyframes ghostsLeftRight1 {
+      from {
+        left: 40px;
+        animation-timing-function: linear;
+      }
+      from, 34%, to {
+        transform: scale(1, 1);
+        animation-timing-function: step-start;
+      }
+      84% {
+        transform: scale(-1, 1);
+        animation-timing-function: step-start;
+      }
+      34% {
+        left: 112px;
+        animation-timing-function: linear;
+      }
+      84% {
+        left: 0;
+        animation-timing-function: linear;
+      }
+      to {
+        left: 40px;
+        animation-timing-function: linear;
+      }
+    }
+    @keyframes ghostsLeftRight2 {
+      from {
+        left: 100px;
+        animation-timing-function: linear;
+      }
+      from, 34%, to {
+        transform: scale(1, 1);
+        animation-timing-function: step-start;
+      }
+      84% {
+        transform: scale(-1, 1);
+        animation-timing-function: step-start;
+      }
+      34% {
+        left: 172px;
+        animation-timing-function: linear;
+      }
+      84% {
+        left: 60px;
+        animation-timing-function: linear;
+      }
+      to {
+        left: 100px;
+        animation-timing-function: linear;
+      }
+    }
+    @keyframes ghostsLeftRight3 {
+      from {
+        left: 160px;
+        animation-timing-function: linear;
+      }
+      from, 34%, to {
+        transform: scale(1, 1);
+        animation-timing-function: step-start;
+      }
+      84% {
+        transform: scale(-1, 1);
+        animation-timing-function: step-start;
+      }
+      34% {
+        left: 232px;
+        animation-timing-function: linear;
+      }
+      84% {
+        left: 120px;
+        animation-timing-function: linear;
+      }
+      to {
+        left: 160px;
+        animation-timing-function: linear;
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .textBlocks {
+      $pixel: 10px;
+
+      .number {
+        height: $pixel*7;
+      }
+
+      &__block {
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+
+        &_text {
+          $width: 400px;
+          $height: 110px;
+          $color1: $dark-blue;
+          $color2: $pink;
+
+          margin: $pixel 0 $pixel $pixel;
+
+          div {
+            width: $width;
+            height: $height + $pixel*4;
+
+            p {
+              padding: 0 40px;
+            }
+          }
+
+          .background {
+            top: $pixel*2;
+
+            &:before {
+              width: $width;
+              height: $height;
+              box-shadow:
+                0 $pixel*-2 0 $pixel*-1 $color1,
+                0 $pixel*2  0 $pixel*-1 $color1,
+                0 $pixel*-4 0 $pixel*-2 $color1,
+                0 $pixel*4  0 $pixel*-2 $color1;
+            }
+
+            &:after {
+              width: $width + $pixel;
+              height: $height + $pixel;
+              box-shadow:
+                0 $pixel*-2 0 $pixel*-1 $color2,
+                0  $pixel*2 0 $pixel*-1 $color2,
+                0 $pixel*-4 0 $pixel*-2 $color2,
+                0  $pixel*4 0 $pixel*-2 $color2;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .robotBlock {
+      display: none;
+    }
+
+    .textBlocks {
+      $pixel: 10px;
+
+      &__block {
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+
+        &_text {
+          $width: 550px;
+          $height: 90px;
+
+          div {
+            width: $width;
+            height: $height + $pixel*4;
+          }
+
+          .background {
+            &:before {
+              width: $width;
+              height: $height;
+            }
+            &:after {
+              width: $width + $pixel;
+              height: $height + $pixel;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    .textBlocks {
+      $pixel: 10px;
+
+      &__block {
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+        &:nth-child(1) {
+          margin-left: $pixel;
+        }
+        &:nth-child(2) {
+          margin-left: 0;
+        }
+        &:nth-child(3) {
+          margin-left: 0;
+        }
+
+        &_text {
+          $width: 420px;
+
+          div {
+            width: $width;
+          }
+
+          .background {
+            &:before {
+              width: $width;
+            }
+            &:after {
+              width: $width + $pixel;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    .textBlocks {
+      $pixel: 8px;
+
+      .number {
+        height: $pixel*7;
+        margin-bottom: $pixel;
+      }
+
+      &__block {
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+
+        &_text {
+          $height: 90px;
+          $color1: $dark-blue;
+          $color2: $pink;
+
+          margin: $pixel 0 $pixel $pixel;
+          width: 100%;
+
+          div {
+            width: calc(100% - 8px);
+            height: $height + $pixel*4;
+
+            p {
+              padding: 0 20px;
+            }
+          }
+
+          .background {
+            width: 100%;
+            top: $pixel*2;
+
+            &:before {
+              width: calc(100% - 8px);
+              height: $height;
+              box-shadow:
+                0 $pixel*-2 0 $pixel*-1 $color1,
+                0 $pixel*2  0 $pixel*-1 $color1,
+                0 $pixel*-4 0 $pixel*-2 $color1,
+                0 $pixel*4  0 $pixel*-2 $color1;
+            }
+
+            &:after {
+              width: 100%;
+              height: $height + $pixel;
+              box-shadow:
+                0 $pixel*-2 0 $pixel*-1 $color2,
+                0  $pixel*2 0 $pixel*-1 $color2,
+                0 $pixel*-4 0 $pixel*-2 $color2,
+                0  $pixel*4 0 $pixel*-2 $color2;
+            }
+          }
+        }
+      }
+    }
+  }
+}

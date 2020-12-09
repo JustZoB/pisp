@@ -1,0 +1,767 @@
+.donate {
+  position: relative;
+
+  .section__content {
+    align-items: center;
+    justify-content: center;
+    width: 1170px;
+    height: 480px;
+
+    h2 {
+      font-size: 46px;
+      line-height: 50px;
+    }
+
+    h2, .letsplay {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .controller {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 1170px;
+    margin-top: 32px;
+
+    .lifes {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      height: 40px;
+
+      .life {
+        width: 40px;
+        height: 36px;
+        margin-right: 10px;
+        background-size: cover;
+        background-image: url("../images/heart.svg");
+      }
+    }
+
+    .score {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      width: 240px;
+      height: 40px;
+
+      .scoreCoin {
+        width: 38px;
+        height: 38px;
+        margin-right: 10px;
+        background-size: cover;
+        background-image: url("../images/coinR1.svg");
+      }
+      .scoreNumbers {
+        color: $white;
+        font-size: 36px;
+        font-family: $font-press-start-2p;
+      }
+    }
+
+    .arrows {
+      position: relative;
+      width: 170px;
+      height: 110px;
+
+      .up,
+      .down,
+      .right,
+      .left {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        cursor: pointer;
+        background-image: url("../images/button-arrow.svg");
+      }
+
+      .up {
+        top: 0;
+        left: 60px;
+      }
+      .down {
+        bottom: 0;
+        left: 60px;
+        transform: rotate(180deg);
+      }
+      .right {
+        bottom: 0;
+        right: 0;
+        transform: rotate(90deg);
+      }
+      .left {
+        bottom: 0;
+        left: 0;
+        transform: rotate(270deg);
+      }
+    }
+  }
+
+  .character {
+    $pixel: 30px;
+    $centerCoin: 4px;
+
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+    background-image: url("../images/monster_lab1.svg");
+    top: $pixel*15 + $centerCoin;
+    left: $pixel*3 + $centerCoin;
+  }
+
+  .button {
+    $pixel: 13px;
+    $width: 400px;
+    $height: 70px;
+    $color1: $blue;
+    $color2: $pink;
+
+    margin: $pixel*4 $pixel $pixel*3 0;
+
+    button {
+      font-size: 24px;
+      line-height: 32px;
+      color: $white;
+      width: $width;
+      height: $height + $pixel*4;
+    }
+
+    .background {
+      top: $pixel*2;
+
+      &:before {
+        background-color: $color1;
+        width: $width;
+        height: $height;
+        box-shadow:
+          0 $pixel*-2 0 $pixel*-1 $color1,
+          0 $pixel*2  0 $pixel*-1 $color1,
+          0 $pixel*-4 0 $pixel*-2 $color1,
+          0 $pixel*4  0 $pixel*-2 $color1;
+      }
+
+      &:after {
+        background-color: $color2;
+        width: $width + $pixel;
+        height: $height + $pixel;
+        box-shadow:
+          0 $pixel*-2 0 $pixel*-1 $color2,
+          0  $pixel*2 0 $pixel*-1 $color2,
+          0 $pixel*-4 0 $pixel*-2 $color2,
+          0  $pixel*4 0 $pixel*-2 $color2;
+      }
+    }
+
+    &:hover {
+      button {
+        padding: $pixel*2 0 0 $pixel*2;
+      }
+      .background:before {
+        top: $pixel;
+        left: $pixel;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      $pixel: 13px;
+      $width: 308px;
+      $height: 66px;
+
+      button {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 0 28px;
+        width: $width;
+        height: $height + $pixel*4;
+      }
+
+      .background {
+        &:before {
+          width: $width;
+          height: $height;
+        }
+
+        &:after {
+          width: $width + $pixel;
+          height: $height + $pixel;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      $pixel: 9px;
+      $width: 230px;
+      $height: 50px;
+      $color1: $blue;
+      $color2: $pink;
+
+      margin: $pixel*4 $pixel $pixel*3 0;
+
+      button {
+        font-size: 12px;
+        line-height: 20px;
+        padding: 0 10px;
+        width: $width;
+        height: $height + $pixel*4;
+      }
+
+      .background {
+        top: $pixel*2;
+
+        &:before {
+          width: $width;
+          height: $height;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color1,
+            0 $pixel*2  0 $pixel*-1 $color1,
+            0 $pixel*-4 0 $pixel*-2 $color1,
+            0 $pixel*4  0 $pixel*-2 $color1;
+        }
+
+        &:after {
+          width: $width + $pixel;
+          height: $height + $pixel;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color2,
+            0  $pixel*2 0 $pixel*-1 $color2,
+            0 $pixel*-4 0 $pixel*-2 $color2,
+            0  $pixel*4 0 $pixel*-2 $color2;
+        }
+      }
+
+      &:hover {
+        button {
+          padding: $pixel*2 0 0 $pixel*2;
+        }
+        .background:before {
+          top: $pixel;
+          left: $pixel;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      $pixel: 7px;
+      $width: 160px;
+      $height: 36px;
+      $color1: $blue;
+      $color2: $pink;
+
+      margin: $pixel $pixel 0 0;
+
+      button {
+        font-size: 10px;
+        line-height: 16px;
+        padding: 0 20px;
+        width: $width;
+        height: $height + $pixel*4;
+      }
+
+      .background {
+        top: $pixel*2;
+
+        &:before {
+          width: $width;
+          height: $height;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color1,
+            0 $pixel*2  0 $pixel*-1 $color1,
+            0 $pixel*-4 0 $pixel*-2 $color1,
+            0 $pixel*4  0 $pixel*-2 $color1;
+        }
+
+        &:after {
+          width: $width + $pixel;
+          height: $height + $pixel;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color2,
+            0  $pixel*2 0 $pixel*-1 $color2,
+            0 $pixel*-4 0 $pixel*-2 $color2,
+            0  $pixel*4 0 $pixel*-2 $color2;
+        }
+      }
+
+      &:hover {
+        button {
+          padding: $pixel*2 0 0 $pixel*2;
+        }
+        .background:before {
+          top: $pixel;
+          left: $pixel;
+        }
+      }
+    }
+  }
+
+  .won,
+  .lose {
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+    width: 420px;
+    height: auto;
+    top: 293px;
+
+    &.show {
+      opacity: 1;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      width: 320px;
+      top: 264px;
+    }
+  }
+
+  .labyrinth {
+    position: absolute;
+  }
+
+  .background-coins {
+    position: absolute;
+    display: none;
+  }
+
+  .coins {
+    .coin {
+      position: absolute;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      background-size: cover;
+      transition: 0.1s;
+      animation-name: coinRotate;
+      transform: rotate(90deg);
+      width: 20px;
+      height: 20px;
+    }
+
+    @keyframes coinRotate {
+      from {
+        background-image: url("../images/coinR1.svg");
+        animation-timing-function: linear;
+      }
+      from, to {
+        transform: rotate(90deg) scale(1, -1);
+        animation-timing-function: step-start;
+      }
+      50% {
+        transform: rotate(90deg) scale(1, 1);;
+        animation-timing-function: step-start;
+      }
+      12.5% {
+        background-image: url("../images/coinR2.svg");
+        animation-timing-function: linear;
+      }
+      25% {
+        background-image: url("../images/coinR3.svg");
+        animation-timing-function: linear;
+      }
+      37.5% {
+        background-image: url("../images/coinR4.svg");
+        animation-timing-function: linear;
+      }
+      50% {
+        background-image: url("../images/coinR5.svg");
+        animation-timing-function: linear;
+      }
+      62.5% {
+        background-image: url("../images/coinR4.svg");
+        animation-timing-function: linear;
+      }
+      75% {
+        background-image: url("../images/coinR3.svg");
+        animation-timing-function: linear;
+      }
+      87.5% {
+        background-image: url("../images/coinR2.svg");
+        animation-timing-function: linear;
+      }
+      to {
+        background-image: url("../images/coinR1.svg");
+        animation-timing-function: linear;
+      }
+    }
+
+    $pixel: 30px;
+    $centerCoin: 4px;
+
+    .coin1 {
+      top: $pixel*2 + $centerCoin;
+      left: $pixel*1 + $centerCoin;
+    }
+    .coin2 {
+      top: $pixel*7 + $centerCoin;
+      left: $pixel*4 + $centerCoin;
+    }
+    .coin3 {
+      top: $pixel*8 + $centerCoin;
+      left: $pixel*10 + $centerCoin;
+    }
+    .coin4 {
+      top: $pixel*13 + $centerCoin;
+      left: $pixel*7 + $centerCoin;
+    }
+    .coin5 {
+      top: $pixel*1 + $centerCoin;
+      left: $pixel*16 + $centerCoin;
+    }
+    .coin6 {
+      top: $pixel*1 + $centerCoin;
+      left: $pixel*28 + $centerCoin;
+    }
+    .coin7 {
+      top: $pixel*2 + $centerCoin;
+      left: $pixel*37 + $centerCoin;
+    }
+    .coin8 {
+      top: $pixel*3 + $centerCoin;
+      left: $pixel*24 + $centerCoin;
+    }
+    .coin9 {
+      top: $pixel*4 + $centerCoin;
+      left: $pixel*31 + $centerCoin;
+    }
+    .coin10 {
+      top: $pixel*7 + $centerCoin;
+      left: $pixel*35 + $centerCoin;
+    }
+    .coin11 {
+      top: $pixel*10 + $centerCoin;
+      left: $pixel*32 + $centerCoin;
+    }
+    .coin12 {
+      top: $pixel*11 + $centerCoin;
+      left: $pixel*37 + $centerCoin;
+    }
+    .coin13 {
+      top: $pixel*14 + $centerCoin;
+      left: $pixel*30 + $centerCoin;
+    }
+    .coin14 {
+      top: $pixel*14 + $centerCoin;
+      left: $pixel*18 + $centerCoin;
+    }
+    .coin15 {
+      top: $pixel*14 + $centerCoin;
+      left: $pixel*1 + $centerCoin;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .section__content {
+      width: 936px;
+      height: 384px;
+
+      h2 {
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      .letsplay {
+        width: 300px;
+      }
+    }
+
+    .labyrinth {
+      width: 936px;
+      height: 384px;
+    }
+
+    .controller {
+      width: 936px;
+    }
+    .character {
+      $pixel: 24px;
+      $centerCoin: 4px;
+
+      top: $pixel*15 + $centerCoin;
+      left: $pixel*3 + $centerCoin;
+      width: 16px;
+      height: 16px;
+    }
+
+    .coins {
+      $pixel: 24px;
+      $centerCoin: 4px;
+
+      .coin {
+        width: 16px;
+        height: 16px;
+      }
+
+      .coin1 {
+        top: $pixel*2 + $centerCoin;
+        left: $pixel*1 + $centerCoin;
+      }
+      .coin2 {
+        top: $pixel*7 + $centerCoin;
+        left: $pixel*4 + $centerCoin;
+      }
+      .coin3 {
+        top: $pixel*8 + $centerCoin;
+        left: $pixel*10 + $centerCoin;
+      }
+      .coin4 {
+        top: $pixel*13 + $centerCoin;
+        left: $pixel*7 + $centerCoin;
+      }
+      .coin5 {
+        top: $pixel*1 + $centerCoin;
+        left: $pixel*16 + $centerCoin;
+      }
+      .coin6 {
+        top: $pixel*1 + $centerCoin;
+        left: $pixel*28 + $centerCoin;
+      }
+      .coin7 {
+        top: $pixel*2 + $centerCoin;
+        left: $pixel*37 + $centerCoin;
+      }
+      .coin8 {
+        top: $pixel*3 + $centerCoin;
+        left: $pixel*24 + $centerCoin;
+      }
+      .coin9 {
+        top: $pixel*4 + $centerCoin;
+        left: $pixel*31 + $centerCoin;
+      }
+      .coin10 {
+        top: $pixel*7 + $centerCoin;
+        left: $pixel*35 + $centerCoin;
+      }
+      .coin11 {
+        top: $pixel*10 + $centerCoin;
+        left: $pixel*32 + $centerCoin;
+      }
+      .coin12 {
+        top: $pixel*11 + $centerCoin;
+        left: $pixel*37 + $centerCoin;
+      }
+      .coin13 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*30 + $centerCoin;
+      }
+      .coin14 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*18 + $centerCoin;
+      }
+      .coin15 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*1 + $centerCoin;
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    display: none;
+
+    .section__content {
+      width: 741px;
+      height: 304px;
+    }
+
+    .labyrinth {
+      width: 741px;
+      height: 304px;
+    }
+
+    .controller {
+      display: none;
+    }
+
+    .character {
+      $pixel: 19px;
+      $centerCoin: 2px;
+
+      top: $pixel*4 + $centerCoin;
+      left: $pixel*20 + $centerCoin;
+      width: 14px;
+      height: 14px;
+    }
+
+    .coins {
+      $pixel: 19px;
+      $centerCoin: 2px;
+
+      .coin {
+        width: 14px;
+        height: 14px;
+      }
+
+      .coin1 {
+        top: $pixel*2 + $centerCoin;
+        left: $pixel*1 + $centerCoin;
+      }
+      .coin2 {
+        top: $pixel*7 + $centerCoin;
+        left: $pixel*4 + $centerCoin;
+      }
+      .coin3 {
+        top: $pixel*8 + $centerCoin;
+        left: $pixel*10 + $centerCoin;
+      }
+      .coin4 {
+        top: $pixel*13 + $centerCoin;
+        left: $pixel*7 + $centerCoin;
+      }
+      .coin5 {
+        top: $pixel*1 + $centerCoin;
+        left: $pixel*16 + $centerCoin;
+      }
+      .coin6 {
+        top: $pixel*1 + $centerCoin;
+        left: $pixel*28 + $centerCoin;
+      }
+      .coin7 {
+        top: $pixel*2 + $centerCoin;
+        left: $pixel*37 + $centerCoin;
+      }
+      .coin8 {
+        top: $pixel*3 + $centerCoin;
+        left: $pixel*24 + $centerCoin;
+      }
+      .coin9 {
+        top: $pixel*4 + $centerCoin;
+        left: $pixel*31 + $centerCoin;
+      }
+      .coin10 {
+        top: $pixel*7 + $centerCoin;
+        left: $pixel*35 + $centerCoin;
+      }
+      .coin11 {
+        top: $pixel*10 + $centerCoin;
+        left: $pixel*32 + $centerCoin;
+      }
+      .coin12 {
+        top: $pixel*11 + $centerCoin;
+        left: $pixel*37 + $centerCoin;
+      }
+      .coin13 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*30 + $centerCoin;
+      }
+      .coin14 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*18 + $centerCoin;
+      }
+      .coin15 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*1 + $centerCoin;
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    .section__content {
+      width: 507px;
+      height: 208px;
+    }
+
+    .labyrinth {
+      width: 507px;
+      height: 208px;
+    }
+
+    .controller {
+      display: none;
+    }
+
+    .character {
+      $pixel: 13px;
+      $centerCoin: 1px;
+
+      top: $pixel*4 + $centerCoin;
+      left: $pixel*20 + $centerCoin;
+      width: 10px;
+      height: 10px;
+    }
+
+    .coins {
+      $pixel: 13px;
+      $centerCoin: 1px;
+
+      .coin {
+        width: 10px;
+        height: 10px;
+      }
+
+      .coin1 {
+        top: $pixel*2 + $centerCoin;
+        left: $pixel*1 + $centerCoin;
+      }
+      .coin2 {
+        top: $pixel*7 + $centerCoin;
+        left: $pixel*4 + $centerCoin;
+      }
+      .coin3 {
+        top: $pixel*8 + $centerCoin;
+        left: $pixel*10 + $centerCoin;
+      }
+      .coin4 {
+        top: $pixel*13 + $centerCoin;
+        left: $pixel*7 + $centerCoin;
+      }
+      .coin5 {
+        top: $pixel*1 + $centerCoin;
+        left: $pixel*16 + $centerCoin;
+      }
+      .coin6 {
+        top: $pixel*1 + $centerCoin;
+        left: $pixel*28 + $centerCoin;
+      }
+      .coin7 {
+        top: $pixel*2 + $centerCoin;
+        left: $pixel*37 + $centerCoin;
+      }
+      .coin8 {
+        top: $pixel*3 + $centerCoin;
+        left: $pixel*24 + $centerCoin;
+      }
+      .coin9 {
+        top: $pixel*4 + $centerCoin;
+        left: $pixel*31 + $centerCoin;
+      }
+      .coin10 {
+        top: $pixel*7 + $centerCoin;
+        left: $pixel*35 + $centerCoin;
+      }
+      .coin11 {
+        top: $pixel*10 + $centerCoin;
+        left: $pixel*32 + $centerCoin;
+      }
+      .coin12 {
+        top: $pixel*11 + $centerCoin;
+        left: $pixel*37 + $centerCoin;
+      }
+      .coin13 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*30 + $centerCoin;
+      }
+      .coin14 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*18 + $centerCoin;
+      }
+      .coin15 {
+        top: $pixel*14 + $centerCoin;
+        left: $pixel*1 + $centerCoin;
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    .section__content {
+      width: 100%;
+    }
+
+    .labyrinth,
+    .coins,
+    .character {
+      display: none;
+    }
+    .background-coins {
+      position: absolute;
+      display: block;
+    }
+  }
+
+}
+
+
