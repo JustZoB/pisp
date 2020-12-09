@@ -39,8 +39,7 @@
       }
 
       p {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding: 5px 9px 0 9px;
       }
 
       &:not(:first-child) {
@@ -901,6 +900,7 @@
         p {
           font-size: 14px;
           line-height: 20px;
+          padding: 0 16px;
         }
       }
     }
