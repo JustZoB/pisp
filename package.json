@@ -26,6 +26,7 @@
     "copy-webpack-plugin": "^6.2.0",
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
+    "css-minimizer-webpack-plugin": "^1.1.5",
     "extract-text-webpack-plugin": "^4.0.0 || ^4.0.0-beta.0",
     "file-loader": "^6.1.0",
     "group-css-media-queries-loader": "^3.0.2",
