@@ -1,3 +1,27 @@
+.en {
+  .lang-switch {
+    &:hover .lang-switch__circle {
+      right: 30px;
+    }
+
+    &__circle {
+      right: 3px;
+    }
+  }
+}
+
+.ru {
+  .lang-switch {
+    &:hover .lang-switch__circle {
+      left: 30px;
+    }
+
+    &__circle {
+      left: 3px;
+    }
+  }
+}
+
 .header {
   display: flex;
   height: 100px;
@@ -25,6 +49,17 @@
       margin-bottom: 0;
       line-height: 0;
       cursor: pointer;
+    }
+  }
+
+  .lang-switch {
+    position: relative;
+    margin-left: 30px;
+
+    &__circle {
+      position: absolute;
+      top: 3px;
+      transition: 0.1s;
     }
   }
 
@@ -60,8 +95,6 @@
           margin-right: 30px;
         }
       }
-
-
     }
 
     .button {
@@ -117,13 +150,18 @@
     }
   }
 
-  .burger-button_box {
+  .burger {
     display: none;
+  }
+
+  .burger-button_box {
+    display: flex;
     position: relative;
     align-items: center;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    margin-left: 15px;
 
     span,
     span:before,
@@ -165,6 +203,10 @@
           &:not(:last-child) {
             margin-right: 20px;
           }
+        }
+
+        .lang-switch {
+          margin-left: 20px;
         }
       }
 
@@ -214,7 +256,7 @@
       }
     }
 
-    .burger-button_box {
+    .burger {
       display: flex;
     }
 
@@ -259,6 +301,10 @@
             margin-right: 0;
           }
         }
+      }
+
+      .lang-switch {
+        display: none;
       }
     }
 

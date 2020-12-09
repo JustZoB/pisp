@@ -8,9 +8,12 @@
     height: 480px;
 
     h2 {
-      margin: 20px 0 0 0;
       font-size: 46px;
       line-height: 50px;
+    }
+
+    h2, .letsplay {
+      margin: 20px 0 0 0;
     }
   }
 
@@ -453,6 +456,10 @@
       h2 {
         font-size: 36px;
         line-height: 40px;
+      }
+
+      .letsplay {
+        width: 300px;
       }
     }
 
