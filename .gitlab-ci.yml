@@ -1,12 +1,10 @@
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+image: node:4.2.2
 
-pages:
+cache:
+  paths:
+  - node_modules/
+
+test_app:
   script:
-    - npm i
+    - npm install
     - npm run build
-  artifacts:
-    paths:
-      - build
-  only:
-    - master
