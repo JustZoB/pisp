@@ -8,7 +8,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production run-s clean build-webpack",
     "build-webpack": "webpack --mode=production",
-    "clean": "rimraf build",
+    "clean": "rimraf public",
     "watch-webpack": "webpack --mode=development --watch",
     "server": "webpack-dev-server",
     "watch": "cross-env NODE_ENV=development npm run clean && run-p watch-webpack server"
