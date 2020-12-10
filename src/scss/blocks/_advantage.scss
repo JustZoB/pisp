@@ -24,7 +24,6 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
       text-align: center;
       width: $block-width;
@@ -36,11 +35,155 @@
         text-shadow: unset;
         padding: 10px 0;
         width: calc(100% - 40px);
+        margin: 10px 0;
       }
 
-      p {
-        padding: 5px 9px 0 9px;
+      div {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        p {
+          padding: 5px 9px 0 9px;
+        }
+
+        .cube {
+          width: 75px;
+          height: 75px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          z-index: 1;
+          background-image: url("../images/secretBox.svg");
+          background-size: cover;
+        }
+
+        .newCoin1,
+        .newCoin2 {
+          position: absolute;
+          background-size: cover;
+          width: 40px;
+          height: 25px;
+          background-image: url("../images/coin.svg");
+          animation-duration: 1.5s;
+          animation-iteration-count: 1;
+        }
+
+        .newCoin1 {
+          animation-name: coinFlipAdv1;
+        }
+        .newCoin2 {
+          animation-name: coinFlipAdv2;
+        }
+
+        @keyframes coinFlipAdv1 {
+          from {
+            transform: rotate(90deg);
+            top: 20px;
+            right: 20px;
+            animation-timing-function: ease-in-out;
+          }
+          15% {
+            transform: rotate(270deg);
+            top: -60px;
+            right: 0;
+            animation-timing-function: ease-in-out;
+          }
+          30% {
+            transform: rotate(450deg);
+            top: -160px;
+            right: -20px;
+            animation-timing-function: ease-in-out;
+          }
+          45% {
+            transform: rotate(630deg);
+            top: -200px;
+            right: -40px;
+            animation-timing-function: ease-in-out;
+          }
+          60% {
+            transform: rotate(810deg);
+            top: -160px;
+            right: -60px;
+            animation-timing-function: ease-in-out;
+          }
+          75% {
+            transform: rotate(990deg);
+            top: -10px;
+            right: -80px;
+            animation-timing-function: ease-in-out;
+          }
+          90% {
+            transform: rotate(1170deg);
+            top: 100px;
+            right: -100px;
+            opacity: 1;
+            animation-timing-function: ease-in-out;
+          }
+          to {
+            transform: rotate(1350deg);
+            top: 140px;
+            right: -115px;
+            opacity: 0;
+            animation-timing-function: ease-in-out;
+          }
+        }
+        @keyframes coinFlipAdv2 {
+          from {
+            transform: rotate(90deg);
+            top: 20px;
+            right: 20px;
+            animation-timing-function: ease-in-out;
+          }
+          15% {
+            transform: rotate(270deg);
+            top: -60px;
+            right: 40px;
+            animation-timing-function: ease-in-out;
+          }
+          30% {
+            transform: rotate(450deg);
+            top: -160px;
+            right: 60px;
+            animation-timing-function: ease-in-out;
+          }
+          45% {
+            transform: rotate(630deg);
+            top: -200px;
+            right: 80px;
+            animation-timing-function: ease-in-out;
+          }
+          60% {
+            transform: rotate(810deg);
+            top: -160px;
+            right: 100px;
+            animation-timing-function: ease-in-out;
+          }
+          75% {
+            transform: rotate(990deg);
+            top: -10px;
+            right: 120px;
+            animation-timing-function: ease-in-out;
+          }
+          90% {
+            transform: rotate(1170deg);
+            top: 100px;
+            right: 140px;
+            opacity: 1;
+            animation-timing-function: ease-in-out;
+          }
+          to {
+            transform: rotate(1350deg);
+            top: 140px;
+            right: 155px;
+            opacity: 0;
+            animation-timing-function: ease-in-out;
+          }
+        }
       }
+
 
       &:not(:first-child) {
         margin-left: $block-margin-horizontal;
@@ -848,6 +991,10 @@
           line-height: 18px;
         }
 
+        .cube {
+          margin-top: 5px;
+        }
+
         p {
           font-size: 16px;
           line-height: 22px;
@@ -895,13 +1042,22 @@
         h3 {
           font-size: 12px;
           line-height: 18px;
+          margin: 5px 0;
         }
 
-        p {
-          font-size: 14px;
-          line-height: 20px;
+        div {
           padding: 0 16px;
+
+          .cube {
+            margin-bottom: 5px;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
         }
+
       }
     }
   }

@@ -49,6 +49,5 @@ arcMonsters.forEach(monster => {
   monster.addEventListener("click", () => {
     monster.classList.add("dead");
     setTimeout(function () { monster.classList.add("finallyDead") }, 500);
-
   });
 });
