@@ -11,7 +11,7 @@ const right = blockDonate.querySelector(".right");
 const won = blockDonate.querySelector(".won");
 const lose = blockDonate.querySelector(".lose");
 
-const xl = 1366;
+const xl = 1365;
 const lg = 992;
 const pixelFL = 30;
 const pixelXL = 24;
