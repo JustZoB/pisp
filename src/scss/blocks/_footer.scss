@@ -385,7 +385,7 @@
   }
 }
 
-.safari .footer .pacman {
+.safari .footerAnimation .pacman {
   animation-name: footerPackmanSafariAnimation;
 
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
