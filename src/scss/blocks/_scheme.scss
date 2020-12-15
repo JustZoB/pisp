@@ -1066,4 +1066,8 @@
 
 .safari .scheme__image .pacman {
   animation-name: pacmanSafariAnim;
+
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    animation-name: unset;
+  }
 }
