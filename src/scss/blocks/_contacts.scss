@@ -68,38 +68,32 @@
       display: inline-block;
       position: absolute;
       background-size: cover;
-      width: 45px;
+      width: calc(26px/5*9);
+      height: calc(26px/5*9);
+      background-image: url("../images/angle2_blue.svg");
     }
 
     &:before {
-      height: 45px;
-      top: 0 - $block-border;
-      right: 0 - $block-border;
+      top: 0 - $block-border - 2;
+      right: 0 - $block-border - 2;
       transform: scale(-1, 1);
-      background-image: url("../images/angle2_blue.svg");
     }
 
     &:after {
-      height: 45px;
-      bottom: 0 - $block-border;
-      left: 0 - $block-border;
-      transform: scale(-1, 1);
-      background-image: url("../images/angle2_blue.svg");
+      bottom: 0 - $block-border - 2;
+      left: 0 - $block-border - 2;
+      transform: scale(1, -1);
     }
 
     .angle1 {
-      height: 45px;
-      top: 0 - $block-border;
-      left: 0 - $block-border;
-      background-image: url("../images/angle2_blue.svg");
+      top: 0 - $block-border - 2;
+      left: 0 - $block-border - 2;
     }
 
     .angle2 {
-      height: 45px;
-      bottom: 0 - $block-border;
-      right: 0 - $block-border;
+      bottom: 0 - $block-border - 2;
+      right: 0 - $block-border - 2;
       transform: scale(-1, -1);
-      background-image: url("../images/angle2_blue.svg");
     }
 
     .buddle {
@@ -199,13 +193,13 @@
       }
 
       &:before {
-        height: 72px;
+        height: calc(41px/5*9);
         transform: scale(1, 1);
         background-image: url("../images/angle_blue.svg");
       }
 
       &:after {
-        height: 72px;
+        height: calc(41px/5*9);
         transform: scale(-1, -1);
         background-image: url("../images/angle_blue.svg");
       }
@@ -279,6 +273,14 @@
       flex-direction: column;
       align-items: center;
       padding: 40px 32px;
+
+      .angle2 {
+        bottom: -10px;
+      }
+
+      &:after {
+        bottom: -10px;
+      }
 
       &__logo {
         width: 180px;

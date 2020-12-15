@@ -199,24 +199,24 @@
         width: 25px;
       }
       &:before {
-        top: 0 - $block-border;
-        right: 0 - $block-border;
+        top: 0 - $block-border - 1;
+        right: 0 - $block-border - 1;
         height: 40px;
       }
       &:after {
-        bottom: 0 - $block-border;
-        left: 0 - $block-border;
+        bottom: 0 - $block-border - 1;
+        left: 0 - $block-border - 1;
         height: 40px;
         transform: scale(-1, -1);
       }
       .angle1 {
-        top: 0 - $block-border;
-        left: 0 - $block-border;
+        top: 0 - $block-border - 1;
+        left: 0 - $block-border - 1;
         height: 25px;
       }
       .angle2 {
-        bottom: 0 - $block-border;
-        right: 0 - $block-border;
+        bottom: 0 - $block-border - 1;
+        right: 0 - $block-border - 1;
         height: 25px;
         transform: scale(-1, -1);
       }
