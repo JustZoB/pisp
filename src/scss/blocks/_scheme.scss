@@ -692,6 +692,113 @@
     }
   }
 
+  @keyframes pacmanSafariAnim {
+    from {
+      top: 301px;
+      left: 902px;
+      transform: rotate(-51deg);
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    7% {
+      top: 301px;
+      left: 902px;
+      opacity: 0;
+      transform: rotate(-51deg);
+      animation-timing-function: linear;
+    }
+    14% {
+      top: 320px;
+      left: 884px;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    20% {
+      top: 333px;
+      left: 870px;
+      transform: rotate(-45deg);
+      animation-timing-function: linear;
+    }
+    26% {
+      top: 347px;
+      left: 854px;
+      animation-timing-function: linear;
+    }
+    32% {
+      top: 351px;
+      left: 832px;
+      transform: rotate(0deg);
+      animation-timing-function: linear;
+    }
+    38% {
+      top: 351px;
+      left: 808px;
+      animation-timing-function: linear;
+    }
+    44% {
+      top: 341px;
+      left: 787px;
+      animation-timing-function: linear;
+    }
+    50% {
+      top: 329px;
+      left: 768px;
+      animation-timing-function: linear;
+    }
+    56% {
+      top: 316px;
+      left: 748px;
+      transform: rotate(45deg);
+      animation-timing-function: linear;
+    }
+    62% {
+      top: 303px;
+      left: 728px;
+      animation-timing-function: linear;
+    }
+    68% {
+      top: 291px;
+      left: 709px;
+      animation-timing-function: linear;
+    }
+    74% {
+      top: 279px;
+      left: 692px;
+      animation-timing-function: linear;
+    }
+    80% {
+      top: 264px;
+      left: 671px;
+      animation-timing-function: linear;
+    }
+    86% {
+      top: 254px;
+      left: 652px;
+      animation-timing-function: linear;
+    }
+    90% {
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    90.01% {
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    93% {
+      top: 240px;
+      left: 634px;
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+    to {
+      top: 244px;
+      left: 634px;
+      transform: rotate(45deg);
+      opacity: 0;
+      animation-timing-function: linear;
+    }
+  }
+
   @keyframes exPointAnim {
     from, 43%, to {
       opacity: 0;
@@ -955,4 +1062,8 @@
       }
     }
   }
+}
+
+.safari .scheme__image .pacman {
+  animation-name: pacmanSafariAnim;
 }

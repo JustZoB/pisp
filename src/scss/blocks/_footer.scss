@@ -214,6 +214,17 @@
     }
   }
 
+  @keyframes footerPackmanSafariAnimation {
+    from {
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    to {
+      left: 100%;
+      animation-timing-function: linear;
+    }
+  }
+
   @keyframes footerGhostAnimation1 {
     from {
       left: 50%;
@@ -371,5 +382,14 @@
       opacity: 1;
       animation-timing-function: linear;
     }
+  }
+}
+
+.safari .footer .pacman {
+  animation-name: footerPackmanSafariAnimation;
+
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    height: 27px;
+    animation-name: footerPackmanSafariAnimation;
   }
 }
