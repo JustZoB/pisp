@@ -30,6 +30,10 @@
       height: $block-height;
       padding: 30px 0;
 
+      img {
+        height: 95px;
+      }
+
       h3 {
         color: $white;
         text-shadow: unset;
@@ -47,6 +51,8 @@
         position: relative;
 
         p {
+          font-size: 20px;
+          line-height: 24px;
           padding: 5px 9px 0 9px;
         }
 
@@ -553,9 +559,9 @@
           line-height: 18px;
         }
 
-        p {
-          font-size: 16px;
-          line-height: 22px;
+        div p {
+          font-size: 15px;
+          line-height: 19px;
         }
       }
 
@@ -811,9 +817,9 @@
           line-height: 22px;
         }
 
-        p {
-          font-size: 18px;
-          line-height: 24px;
+        div p {
+          font-size: 15px;
+          line-height: 19px;
         }
       }
 

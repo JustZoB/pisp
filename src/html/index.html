@@ -104,7 +104,7 @@
           <ul>
             <li>Compact, robust and low weight</li>
             <li>Suitable for almost any Atmel AVR, ESP32, ESP82XX, STM32</li>
-            <li>Upload/Download/Backup firmwares</li>
+            <li>Upload / Download / Backup firmwares</li>
             <li>Serial Monitor</li>
             <li>Store all your firmwares at once</li>
             <li>Built-in 1300mAh battery and MicroSD</li>
@@ -265,7 +265,7 @@
               <img src="images/arrows.svg" alt="Arrows">
               <h3>Portability</h3>
               <div>
-                <p>No laptop needed for in-field maintenance. Uploud/Download/Backup firmwares,
+                <p>No laptop needed for in-field maintenance. Upload/Download/Backup firmwares.
                 Monitor Serial output - everything you need on fields</p>
               </div>
             </div>
@@ -365,22 +365,27 @@
                 <a href="https://www.instagram.com/cimpleo/" target="_blank">
                   <img src="images/social/instagram.svg" alt="Instagram">
                 </a>
+              </div>
+              <div>
                 <a href="https://vk.com/cimpleo" target="_blank">
                   <img src="images/social/vk.svg" alt="VK">
                 </a>
-              </div>
-              <div>
                 <a href="https://wa.me/79139757770?text=Hi%20CimpleO,%20Could%20you%20help%20me%20with%20" target="_blank">
                   <img src="images/social/whatsApp.svg" alt="Whatsapp">
                 </a>
                 <a href="https://www.linkedin.com/company/cimpleo" target="_blank">
                   <img src="images/social/linkedIn.svg" alt="LinkendIn">
                 </a>
+              </div>
+              <div>
                 <a href="skype:aukozhuhov?chat" target="_blank">
                   <img src="images/social/skype.svg" alt="Skype">
                 </a>
-                <a class="messengers__pacman">
-                  <img src="images/pacman_blue.svg" alt="Pacman">
+                <a href="https://dribbble.com/cimpleo" target="_blank">
+                  <img src="images/social/dribbble.svg" alt="Dribbble">
+                </a>
+                <a href="https://medium.com/cimpleo" target="_blank">
+                  <img src="images/social/medium.svg" alt="Medium">
                 </a>
               </div>
             </div>
@@ -401,11 +406,26 @@
 
     <footer class="footer">
       <div class="wrap">
-        <div class="footer__copyright">2012-2020 <a href="https://cimpleo.com" target="_blank">CimpleO</a>, LLC (ISO 9001:2015)</div>
+        <div class="footer__copyright">2012-2021 <a href="https://cimpleo.com" target="_blank">CimpleO</a>, LLC (ISO 9001:2015)</div>
       </div>
     </footer>
   </main>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      function preload(urlList) {
+        urlList.forEach(url => {
+          if (url.indexOf('.svg') >= 0) {
+            (new Image()).src = url;
+          }
+        });
+      }
+
+      fetch("/manifest.json").then(response => response.json()).then(data => {
+        preload(Object.values(data));
+      });
+    });
+  </script>
   <script src="bundle.js"></script>
 </body>
 </html>

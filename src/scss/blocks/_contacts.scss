@@ -58,7 +58,7 @@
     display: flex;
     position: relative;
     border: $block-border solid $blue;
-    padding: 42px 84px;
+    padding: 42px 60px;
 
     &:before,
     &:after,
@@ -106,7 +106,8 @@
     }
 
     &__logo {
-      margin-right: 50px;
+      width: 140px;
+      margin-right: 40px;
 
       &:hover {
         filter: drop-shadow(2px 2px 0px $pink);
@@ -121,7 +122,7 @@
       & > a {
         font-family: $font-press-start-2p;
         text-align: center;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
 
         &:hover {
           text-shadow: 2px 2px 0 $pink;
@@ -131,18 +132,19 @@
       .messengers {
         display: flex;
 
-        & > div:not(:last-child) {
-          margin-right: 12px;
+        & > div {
+          display: flex;
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
         }
 
         a {
           cursor: pointer;
           font-size: 0;
-          padding-bottom: 25px;
-          padding-top: 25px;
 
           &:hover {
-            padding-bottom: 37px;
             img {
               transform: translateY(-12px);
             }
@@ -161,27 +163,24 @@
     }
 
     @media (max-width: map-get($grid-breakpoints, 'xl')) {
-      padding: 36px 48px;
+      padding: 36px 28px;
 
       &__logo {
-        width: 160px;
+        width: 140px;
         margin-right: 30px;
       }
 
       &__links .messengers a {
-        padding-bottom: 22.5px;
-        padding-top: 22.5px;
 
         &:hover {
-          padding-bottom: 30.5px;
           img {
             transform: translateY(-8px);
           }
         }
 
         img {
-          width: 45px;
-          height: 45px;
+          width: 40px;
+          height: 40px;
         }
       }
     }
@@ -204,6 +203,10 @@
         background-image: url("../images/angle_blue.svg");
       }
 
+      &__logo {
+        width: 110px;
+      }
+
       &__links {
         & > a {
           font-size: 18px;
@@ -215,20 +218,13 @@
           }
 
           a {
-            padding-bottom: 20px;
-            padding-top: 20px;
-
-            &:hover {
-              padding-bottom: 28px;
-            }
-
             &:not(:last-child) {
               margin-right: 9px;
             }
 
             img {
-              width: 40px;
-              height: 40px;
+              width: 35px;
+              height: 35px;
             }
           }
         }
@@ -238,7 +234,6 @@
       padding: 30px 36px;
 
       &__logo {
-        width: 120px;
         margin-left: 10px;
         margin-right: 15px;
       }
@@ -254,16 +249,9 @@
           }
 
           a {
-            padding-bottom: 16.5px;
-            padding-top: 16.5px;
-
-            &:hover {
-              padding-bottom: 24.5px;
-            }
-
             img {
-              width: 33px;
-              height: 33px;
+              width: 28px;
+              height: 28px;
             }
           }
         }
@@ -316,17 +304,6 @@
               img {
                 width: 45px;
                 height: 45px;
-              }
-            }
-            .messengers__pacman {
-              display: inline-block;
-              cursor: unset;
-              width: 45px;
-              height: 45px;
-              padding: 0;
-
-              &:hover {
-                transform: translateY(0) scale(-1, 1);
               }
             }
           }
