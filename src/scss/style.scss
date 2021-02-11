@@ -155,3 +155,105 @@ a {
     }
   }
 }
+
+.loaded1 {
+  .about {
+    .section__text {
+      .ghosts {
+        .ghost1 {
+          background-image: url("../images/monsterGhost1_closedEyes.svg") !important;
+        }
+        .ghost2 {
+          background-image: url("../images/monsterGhost3_closedEyes.svg") !important;
+        }
+        .ghost3 {
+          background-image: url("../images/monsterGhost4_closedEyes.svg") !important;
+        }
+      }
+    }
+
+    .section__image {
+      .monster1.arc {
+        background-image: url("../images/monsterArc1_darkblue.svg") !important;
+      }
+      .monster2.arc {
+        background-image: url("../images/monsterArc2_blue.svg") !important;
+      }
+      .monster3.arc {
+        background-image: url("../images/monsterArc3_purple.svg") !important;
+      }
+      .monster4.arc {
+        background-image: url("../images/dead1_blue.svg") !important;
+      }
+      .monster5.arc {
+        background-image: url("../images/dead3.svg") !important;
+      }
+      .wow {
+        background-image: url("../images/wow_pink_active.svg") !important;
+      }
+      .lamp {
+        background-image: url("../images/lamp.svg") !important;
+      }
+    }
+  }
+}
+
+.loaded2 {
+  .about .section__image {
+    .monster1.arc {
+      background-image: url("../images/dead2_blue.svg") !important;
+    }
+    .monster2.arc {
+      background-image: url("../images/dead1_darkblue.svg") !important;
+    }
+    .monster3.arc {
+      background-image: url("../images/dead2_darkblue.svg") !important;
+    }
+    .monster4.arc {
+      background-image: url("../images/dead1_purple.svg") !important;
+    }
+    .monster5.arc {
+      background-image: url("../images/dead2_purple.svg") !important;
+    }
+  }
+}
+
+.loaded3 {
+  .about .section__image {
+    .monster1.arc {
+      background-image: url("../images/monsterGhost2.svg") !important;
+    }
+    .monster2.arc {
+      background-image: url("../images/coin.svg") !important;
+    }
+    .monster3.arc {
+      background-image: url("../images/monsterGhost2LookBottom.svg") !important;
+    }
+    .monster4.arc {
+      background-image: url("../images/monsterGhost2LookTop.svg") !important;
+    }
+    .monster5.arc {
+      background-image: url("../images/monsterGhost1LookTop.svg") !important;
+    }
+  }
+}
+
+.loaded4 {
+  .about .section__image {
+    .monster1.arc {
+      background-image: url("../images/monsterGhost3LookBottom.svg") !important;
+    }
+    .monster2.arc {
+      background-image: url("../images/monsterGhost3LookTop.svg") !important;
+    }
+    .monster3.arc {
+      background-image: url("../images/monsterGhost4_closedEyes.svg") !important;
+    }
+    .monster4.arc {
+      background-image: url("../images/monsterGhost_alternative.svg") !important;
+    }
+    .monster5.arc {
+      background-image: url("../images/toasty.png") !important;
+    }
+  }
+}

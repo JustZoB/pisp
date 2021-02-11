@@ -627,7 +627,9 @@
     width: 100%;
 
     img {
+      width: 618px;
       background: radial-gradient(50% 50% at 50% 50%, $blue 39.06%, transparent 100%);
+
       @media (max-width: map-get($grid-breakpoints, 'xl')) {
         width: 500px;
       }

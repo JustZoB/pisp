@@ -413,17 +413,22 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-      function preload(urlList) {
-        urlList.forEach(url => {
-          if (url.indexOf('.svg') >= 0) {
-            (new Image()).src = url;
-          }
-        });
-      }
+      setTimeout(function () {
+        function newLoad(i, last) {
+          setTimeout(function () {
+            document.body.classList.remove(`loaded${i}`);
+            if (!last) {
+              document.body.classList.add(`loaded${i + 1}`);
+            }
+          }, 300 * i);
+        }
+        document.body.classList.add("loaded1");
 
-      fetch("/manifest.json").then(response => response.json()).then(data => {
-        preload(Object.values(data));
-      });
+        for (let i = 1; i < 5; i++) {
+          i === 4 ? newLoad(i, true) : newLoad(i);
+        }
+
+      }, 500);
     });
   </script>
   <script src="bundle.js"></script>
