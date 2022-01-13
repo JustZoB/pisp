@@ -1,0 +1,1312 @@
+.about {
+  .section__content {
+    display: flex;
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .pixelBorder {
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      z-index: 10;
+      background-image: url("../images/bubble-element.svg");
+      background-size: cover;
+    }
+
+    div p {
+      font-family: $font-press-start-2p;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .textBlock_lg {
+    $pixel: 10px;
+    $width: 900px;
+    $height: 100px;
+    $color1: $purple;
+    $color2: $blue;
+
+    display: none;
+    margin: $pixel $pixel $pixel 0;
+
+    &:after {
+      bottom: -$pixel*5;
+      right: $pixel*20;
+      width: $pixel*6;
+      height: $pixel*5;
+    }
+
+    div {
+      width: $width;
+      height: $height + $pixel*4;
+
+      p {
+        padding: 0 36px;
+      }
+    }
+
+    .background {
+      top: $pixel*2;
+
+      &:before {
+        background-color: $color1;
+        width: $width;
+        height: $height;
+        box-shadow:
+          0 $pixel*-2 0 $pixel*-1 $color1,
+          0 $pixel*2  0 $pixel*-1 $color1,
+          0 $pixel*-4 0 $pixel*-2 $color1,
+          0 $pixel*4  0 $pixel*-2 $color1;
+      }
+
+      &:after {
+        background-color: $color2;
+        width: $width + $pixel;
+        height: $height + $pixel;
+        box-shadow:
+          0 $pixel*-2 0 $pixel*-1 $color2,
+          0  $pixel*2 0 $pixel*-1 $color2,
+          0 $pixel*-4 0 $pixel*-2 $color2,
+          0  $pixel*4 0 $pixel*-2 $color2;
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      display: block;
+      order: 1;
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      $pixel: 10px;
+      $width: 700px;
+
+      &:after {
+        right: $pixel*13;
+      }
+
+      div {
+        width: $width;
+      }
+
+      .background {
+        &:before {
+          width: $width;
+        }
+
+        &:after {
+          width: $width + $pixel;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      $pixel: 10px;
+      $width: 520px;
+
+      &:after {
+        right: $pixel*7;
+      }
+
+      div {
+        width: $width;
+
+        p {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      .background {
+        &:before {
+          width: $width;
+        }
+
+        &:after {
+          width: $width + $pixel;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      $pixel: 8px;
+      $height: 100px;
+      $color1: $purple;
+      $color2: $blue;
+
+      margin: 0;
+      width: 100%;
+
+      &:after {
+        bottom: -$pixel*5;
+        width: $pixel*6;
+        height: $pixel*5;
+      }
+
+      div {
+        width: calc(100% - 8px);
+        height: $height + $pixel*4;
+
+        p {
+          font-size: 16px;
+          line-height: 18px;
+          padding: 0 20px;
+        }
+      }
+
+      .background {
+        width: 100%;
+        top: $pixel*2;
+
+        &:before {
+          width: calc(100% - 8px);
+          height: $height;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color1,
+            0 $pixel*2  0 $pixel*-1 $color1,
+            0 $pixel*-4 0 $pixel*-2 $color1,
+            0 $pixel*4  0 $pixel*-2 $color1;
+        }
+
+        &:after {
+          width: 100%;
+          height: $height + $pixel;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color2,
+            0  $pixel*2 0 $pixel*-1 $color2,
+            0 $pixel*-4 0 $pixel*-2 $color2,
+            0  $pixel*4 0 $pixel*-2 $color2;
+        }
+      }
+    }
+  }
+
+  .section__text {
+    display: flex;
+    flex-direction: column;
+
+    .textBlock_xl {
+      $pixel: 10px;
+      $width: 700px;
+      $height: 100px;
+      $color1: $purple;
+      $color2: $blue;
+
+      margin: $pixel 0;
+
+      &:after {
+        bottom: -$pixel*5;
+        right: $pixel*5;
+        width: $pixel*6;
+        height: $pixel*5;
+      }
+
+      div {
+        width: $width;
+        height: $height + $pixel*4;
+
+        p {
+          padding: 0 36px;
+        }
+      }
+
+      .background {
+        top: $pixel*2;
+
+        &:before {
+          background-color: $color1;
+          width: $width;
+          height: $height;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color1,
+            0 $pixel*2  0 $pixel*-1 $color1,
+            0 $pixel*-4 0 $pixel*-2 $color1,
+            0 $pixel*4  0 $pixel*-2 $color1;
+        }
+
+        &:after {
+          background-color: $color2;
+          width: $width + $pixel;
+          height: $height + $pixel;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color2,
+            0  $pixel*2 0 $pixel*-1 $color2,
+            0 $pixel*-4 0 $pixel*-2 $color2,
+            0  $pixel*4 0 $pixel*-2 $color2;
+        }
+      }
+
+      @media (max-width: map-get($grid-breakpoints, 'xl')) {
+        display: none;
+      }
+    }
+
+    .ghosts {
+      position: relative;
+      height: 50px;
+      margin-top: 30px;
+
+      .ghost1,
+      .ghost2,
+      .ghost3 {
+        position: absolute;
+        width: 43px;
+        height: 40px;
+        top: 5px;
+        background-size: cover;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        transition: 0.2s;
+      }
+      .ghost1 {
+        right: 400px;
+        background-image: url("../images/monsterGhost1.svg");
+        animation-name: ghost1;
+
+        &:hover {
+          background-image: url("../images/monsterGhost1_closedEyes.svg") !important;
+        }
+      }
+      .ghost2 {
+        right: 300px;
+        background-image: url("../images/monsterGhost3.svg");
+        animation-name: ghost2;
+
+        &:hover {
+          background-image: url("../images/monsterGhost3_closedEyes.svg") !important;
+        }
+      }
+      .ghost3 {
+        right: 200px;
+        background-image: url("../images/monsterGhost4.svg");
+        animation-name: ghost3;
+
+        &:hover {
+          background-image: url("../images/monsterGhost4_closedEyes.svg") !important;
+        }
+      }
+
+      @media (max-width: map-get($grid-breakpoints, 'xl')) {
+        .ghost1 {
+          right: 300px;
+        }
+        .ghost2 {
+          right: 200px;
+        }
+        .ghost3 {
+          right: 100px;
+        }
+      }
+      @media (max-width: map-get($grid-breakpoints, 'md')) {
+        .ghost1 {
+          right: 250px;
+        }
+        .ghost2 {
+          right: 150px;
+        }
+        .ghost3 {
+          right: 50px;
+        }
+      }
+      @media (max-width: map-get($grid-breakpoints, 'sm')) {
+        display: flex;
+        justify-content: space-around;
+
+        .ghost1,
+        .ghost2,
+        .ghost3 {
+          position: relative;
+          right: unset;
+        }
+      }
+    }
+
+    & > p {
+      max-width: 610px;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    & > ul {
+      max-width: 600px;
+      padding-left: 30px;
+      list-style-image: url("../images/dot_list.svg");
+
+      li {
+        &:not(:first-child) {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      order: 3;
+
+      & > p,
+      & > ul {
+        max-width: 900px;
+      }
+      & > p {
+        margin-top: 30px;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      & > p,
+      & > ul {
+        max-width: 700px;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      & > p,
+      & > ul {
+        max-width: 520px;
+      }
+      & > p {
+        margin-top: 0;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      & > p,
+      & > ul {
+        width: 100%;
+      }
+    }
+  }
+
+  .section__image {
+    position: relative;
+    width: 465px;
+    min-height: 500px;
+    user-select: none;
+
+    .line1,
+    .line2,
+    .line3,
+    .arc,
+    .lamp,
+    .heart,
+    .gamepad,
+    .wow,
+    .cube,
+    .newCoin1,
+    .newCoin2 {
+      position: absolute;
+      background-size: cover;
+    }
+
+    .pispImage {
+      position: absolute;
+      left: -50px;
+      top: 180px;
+      width: 420px;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-name: pisp;
+      background: radial-gradient(50% 50% at 50% 50%, $blue 39.06%, transparent 100%);
+    }
+
+    .pispMd {
+      display: none;
+      width: 100%;
+    }
+
+    .line1,
+    .line2,
+    .line3 {
+      width: 9px;
+      height: 42px;
+      background-image: url("../images/line3.svg");
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .line1 {
+      top: 168px;
+      left: 270px;
+      transform: rotate(-5deg);
+      animation-name: line1;
+    }
+
+    .line2 {
+      top: 175px;
+      left: 322px;
+      transform: rotate(36deg);
+      animation-name: line2;
+    }
+
+    .line3 {
+      top: 212px;
+      left: 354px;
+      transform: rotate(-103deg);
+      animation-name: line3;
+    }
+
+    .arc {
+      width: 60px;
+      height: 42px;
+
+      &:not(.dead) {
+        &:hover {
+          animation-duration: 0.6s;
+          animation-iteration-count: 1;
+          animation-name: swing;
+        }
+      }
+
+      &.dead {
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-name: deadBlue;
+      }
+      &.finallyDead {
+        background-image: url("../images/dead3.svg") !important;
+      }
+    }
+    .monster1 {
+      top: 30px;
+      left: 40px;
+    }
+    .monster2 {
+      top: 80px;
+      left: 230px;
+    }
+    .monster3 {
+      top: 400px;
+      left: 400px;
+    }
+    .monster4 {
+      top: 500px;
+      right: 100px;
+    }
+    .monster5 {
+      bottom: 80px;
+      right: 20px;
+    }
+    .monster6 {
+      bottom: 40px;
+      left: 150px;
+    }
+
+    .wow {
+      width: 115px;
+      height: 43px;
+      bottom: 60px;
+      left: -60px;
+      transform: rotate(-15deg);
+      cursor: pointer;
+      transition: 0.1s;
+      background-image: url("../images/wow_pink.svg");
+
+      &:hover,
+      &:active {
+        background-image: url("../images/wow_pink_active.svg");
+      }
+    }
+
+    .heart {
+      width: 42px;
+      height: 38px;
+      top: 120px;
+      left: 100px;
+      transform: rotate(-20deg);
+      background-image: url("../images/heart.svg");
+      transition: 0.5s;
+
+      &:hover {
+        transform: rotate(-20deg) scale(1.4);
+      }
+    }
+
+    .lamp {
+      width: 76px;
+      height: 74px;
+      top: 20px;
+      right: 20px;
+      transform: rotate(40deg);
+      cursor: pointer;
+      background-image: url("../images/lamp_deactive.svg");
+
+      &.active {
+        background-image: url("../images/lamp.svg");
+      }
+    }
+
+    .gamepad {
+      width: 66px;
+      height: 40px;
+      top: 270px;
+      right: -30px;
+      transform: rotate(30deg);
+      cursor: pointer;
+      background-image: url("../images/gamepad3.svg");
+    }
+
+    .cube {
+      width: 75px;
+      height: 75px;
+      bottom: 0;
+      right: 120px;
+      cursor: pointer;
+      z-index: 1;
+      background-image: url("../images/secretBox.svg");
+    }
+
+    .newCoin1,
+    .newCoin2 {
+      width: 40px;
+      height: 25px;
+      bottom: 20px;
+      right: 130px;
+      background-image: url("../images/coin.svg");
+      animation-duration: 1.5s;
+      animation-iteration-count: 1;
+    }
+
+    .newCoin1 {
+      animation-name: coinFlip1;
+
+      @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        animation-name: coinFlip1Adapt;
+      }
+    }
+    .newCoin2 {
+      animation-name: coinFlip2;
+
+      @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        animation-name: coinFlip2Adapt;
+      }
+    }
+    .toasty {
+      $image-width: 300px;
+      $image-height: 300px;
+      position: fixed;
+      background-size: cover;
+      background-image: url("../images/toasty.png");
+      width: $image-width;
+      height: $image-height;
+      right: 0 - $image-width;
+      bottom: 0 - $image-height;
+      animation-duration: 1.5s;
+      animation-iteration-count: 1;
+      animation-name: toasty;
+      z-index: 10;
+
+      @keyframes toasty {
+        from {
+          right: 0 - $image-width;
+          bottom: 0 - $image-height;
+          animation-timing-function: linear;
+        }
+        30% {
+          right: 0;
+          bottom: 0;
+          animation-timing-function: linear;
+        }
+        70% {
+          right: 0;
+          bottom: 0;
+          animation-timing-function: linear;
+        }
+        to {
+          right: 0 - $image-width;
+          bottom: 0 - $image-height;
+          animation-timing-function: linear;
+        }
+      }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      order: 2;
+      width: 900px;
+
+      .pispImage {
+        left: 260px;
+        animation-name: pispAdapt;
+      }
+      .line1 {
+        top: 48px;
+        left: 596px;
+      }
+      .line2 {
+        top: 58px;
+        left: 644px;
+      }
+      .line3 {
+        top: 91px;
+        left: 674px;
+      }
+      .wow {
+        left: 20px;
+      }
+      .heart {
+        top: 230px;
+        left: 80px;
+      }
+      .gamepad {
+        top: 310px;
+        right: 30px;
+      }
+      .monster2 {
+        top: 120px;
+        left: 180px;
+      }
+      .monster3 {
+        top: 450px;
+        left: 250px;
+      }
+      .monster4 {
+        top: 270px;
+        right: 200px;
+      }
+      .monster5 {
+        bottom: 300px;
+        right: 80px;
+      }
+      .monster6 {
+        bottom: 140px;
+        left: 170px;
+      }
+
+      @keyframes pispAdapt {
+        from {
+          top: 54px;
+          animation-timing-function: ease-out;
+        }
+        to {
+          top: 30px;
+          animation-timing-function: ease-out;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      width: 700px;
+
+      .pispImage {
+        left: 180px;
+      }
+      .line1 {
+        left: 524px;
+      }
+      .line2 {
+        left: 570px;
+      }
+      .line3 {
+        left: 598px;
+      }
+      .lamp {
+        top: 20px;
+        right: 0;
+      }
+      .wow {
+        bottom: 60px;
+      }
+      .heart {
+        top: 154px;
+        left: 63px;
+      }
+      .gamepad {
+        top: 258px;
+        right: 23px;
+      }
+      .cube {
+        right: 50px;
+      }
+      .monster1 {
+        top: 30px;
+        left: 40px;
+      }
+      .monster2 {
+        top: 92px;
+        left: 158px;
+      }
+      .monster3 {
+        left: 192px;
+      }
+      .monster4 {
+        top: 342px;
+        right: 107px;
+      }
+      .monster5 {
+        right: 56px;
+      }
+      .monster6 {
+        bottom: 188px;
+        left: 98px;
+      }
+
+      @keyframes pispAdapt {
+        from {
+          top: 54px;
+          animation-timing-function: ease-out;
+        }
+        to {
+          top: 30px;
+          animation-timing-function: ease-out;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      width: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .pispMd {
+        display: block;
+      }
+
+      .line1,
+      .line2,
+      .line3,
+      .wow,
+      .heart,
+      .gamepad,
+      .cube,
+      .lamp,
+      .arc,
+      .pispImage {
+        display: none;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+      width: 100%;
+      min-height: unset;
+      padding: 40px 0 20px 0;
+    }
+  }
+
+  @keyframes swing {
+    15% {
+      transform: translateX(9px);
+    }
+    30% {
+      transform: translateX(-9px);
+    }
+    40% {
+      transform: translateX(6px);
+    }
+    50% {
+      transform: translateX(-6px);
+    }
+    65% {
+      transform: translateX(3px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes pisp {
+    from {
+      top: 188px;
+      animation-timing-function: ease-out;
+    }
+    to {
+      top: 164px;
+      animation-timing-function: ease-out;
+    }
+  }
+  @keyframes line1 {
+    from {
+      transform: rotate(-5deg) translateY(8px);
+      animation-timing-function: ease-out;
+    }
+    to {
+      transform: rotate(-5deg) translateY(-15px);
+      animation-timing-function: ease-out;
+    }
+  }
+  @keyframes line2 {
+    from {
+      transform: rotate(36deg) translateY(8px);
+      animation-timing-function: ease-out;
+    }
+    to {
+      transform: rotate(36deg) translateY(-15px);
+      animation-timing-function: ease-out;
+    }
+  }
+  @keyframes line3 {
+    from {
+      transform: rotate(-103deg) translateY(-8px);
+      animation-timing-function: ease-out;
+    }
+    to {
+      transform: rotate(-103deg) translateY(15px);
+      animation-timing-function: ease-out;
+    }
+  }
+  @keyframes ghost1 {
+    from, 10%, to {
+      background-image: url("../images/monsterGhost1.svg");
+      animation-timing-function: step-start;
+    }
+    5% {
+      background-image: url("../images/monsterGhost1_closedEyes.svg");
+      animation-timing-function: step-start;
+    }
+  }
+  @keyframes ghost2 {
+    from, 30%, 40%, to {
+      background-image: url("../images/monsterGhost3.svg");
+      animation-timing-function: step-start;
+    }
+    35% {
+      background-image: url("../images/monsterGhost3_closedEyes.svg");
+      animation-timing-function: step-start;
+    }
+  }
+  @keyframes ghost3 {
+    from, 60%, 70%, to {
+      background-image: url("../images/monsterGhost4.svg");
+      animation-timing-function: step-start;
+    }
+    65% {
+      background-image: url("../images/monsterGhost4_closedEyes.svg");
+      animation-timing-function: step-start;
+    }
+  }
+  @keyframes coinFlip1 {
+    from {
+      transform: rotate(90deg);
+      bottom: 20px;
+      right: 130px;
+      animation-timing-function: ease-in-out;
+    }
+    15% {
+      transform: rotate(270deg);
+      bottom: 100px;
+      right: 110px;
+      animation-timing-function: ease-in-out;
+    }
+    30% {
+      transform: rotate(450deg);
+      bottom: 200px;
+      right: 90px;
+      animation-timing-function: ease-in-out;
+    }
+    45% {
+      transform: rotate(630deg);
+      bottom: 240px;
+      right: 70px;
+      animation-timing-function: ease-in-out;
+    }
+    60% {
+      transform: rotate(810deg);
+      bottom: 200px;
+      right: 50px;
+      animation-timing-function: ease-in-out;
+    }
+    75% {
+      transform: rotate(990deg);
+      bottom: 50px;
+      right: 30px;
+      animation-timing-function: ease-in-out;
+    }
+    90% {
+      transform: rotate(1170deg);
+      bottom: -60px;
+      right: 10px;
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    to {
+      transform: rotate(1350deg);
+      bottom: -100px;
+      right: -5px;
+      opacity: 0;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  @keyframes coinFlip2 {
+    from {
+      transform: rotate(90deg);
+      bottom: 20px;
+      right: 130px;
+      animation-timing-function: ease-in-out;
+    }
+    15% {
+      transform: rotate(270deg);
+      bottom: 100px;
+      right: 150px;
+      animation-timing-function: ease-in-out;
+    }
+    30% {
+      transform: rotate(450deg);
+      bottom: 200px;
+      right: 170px;
+      animation-timing-function: ease-in-out;
+    }
+    45% {
+      transform: rotate(630deg);
+      bottom: 240px;
+      right: 190px;
+      animation-timing-function: ease-in-out;
+    }
+    60% {
+      transform: rotate(810deg);
+      bottom: 200px;
+      right: 210px;
+      animation-timing-function: ease-in-out;
+    }
+    75% {
+      transform: rotate(990deg);
+      bottom: 50px;
+      right: 230px;
+      animation-timing-function: ease-in-out;
+    }
+    90% {
+      transform: rotate(1170deg);
+      bottom: -60px;
+      right: 250px;
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    to {
+      transform: rotate(1350deg);
+      bottom: -100px;
+      right: 265px;
+      opacity: 0;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  @keyframes coinFlip1Adapt {
+    from {
+      transform: rotate(90deg);
+      bottom: 20px;
+      right: 60px;
+      animation-timing-function: ease-in-out;
+    }
+    15% {
+      transform: rotate(270deg);
+      bottom: 100px;
+      right: 45px;
+      animation-timing-function: ease-in-out;
+    }
+    30% {
+      transform: rotate(450deg);
+      bottom: 200px;
+      right: 30px;
+      animation-timing-function: ease-in-out;
+    }
+    45% {
+      transform: rotate(630deg);
+      bottom: 240px;
+      right: 15px;
+      animation-timing-function: ease-in-out;
+    }
+    60% {
+      transform: rotate(810deg);
+      bottom: 200px;
+      right: 0;
+      animation-timing-function: ease-in-out;
+    }
+    75% {
+      transform: rotate(990deg);
+      bottom: 50px;
+      right: -15px;
+      animation-timing-function: ease-in-out;
+    }
+    90% {
+      transform: rotate(1170deg);
+      bottom: -60px;
+      right: -30px;
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    to {
+      transform: rotate(1350deg);
+      bottom: -100px;
+      right: -40px;
+      opacity: 0;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  @keyframes coinFlip2Adapt {
+    from {
+      transform: rotate(90deg);
+      bottom: 20px;
+      right: 60px;
+      animation-timing-function: ease-in-out;
+    }
+    15% {
+      transform: rotate(270deg);
+      bottom: 100px;
+      right: 75px;
+      animation-timing-function: ease-in-out;
+    }
+    30% {
+      transform: rotate(450deg);
+      bottom: 200px;
+      right: 90px;
+      animation-timing-function: ease-in-out;
+    }
+    45% {
+      transform: rotate(630deg);
+      bottom: 240px;
+      right: 105px;
+      animation-timing-function: ease-in-out;
+    }
+    60% {
+      transform: rotate(810deg);
+      bottom: 200px;
+      right: 120px;
+      animation-timing-function: ease-in-out;
+    }
+    75% {
+      transform: rotate(990deg);
+      bottom: 50px;
+      right: 135px;
+      animation-timing-function: ease-in-out;
+    }
+    90% {
+      transform: rotate(1170deg);
+      bottom: -60px;
+      right: 150px;
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    to {
+      transform: rotate(1350deg);
+      bottom: -100px;
+      right: 160px;
+      opacity: 0;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  @keyframes deadBlue {
+    0% {
+      background-image: url("../images/dead1_blue.svg");
+      animation-timing-function: step-end;
+    }
+    50%, to {
+      background-image: url("../images/dead2_blue.svg");
+      animation-timing-function: step-start;
+    }
+  }
+  @keyframes deadDarkblue {
+    0% {
+      background-image: url("../images/dead1_darkblue.svg");
+      animation-timing-function: step-end;
+    }
+    50%, to {
+      background-image: url("../images/dead2_darkblue.svg");
+      animation-timing-function: step-start;
+    }
+  }
+  @keyframes deadPurple {
+    0% {
+      background-image: url("../images/dead1_purple.svg");
+      animation-timing-function: step-end;
+    }
+    50%, to {
+      background-image: url("../images/dead2_purple.svg");
+      animation-timing-function: step-start;
+    }
+  }
+
+  .section__image.state1 {
+    .monster1 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster2 {
+      background-image: url("../images/monsterArc3_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster3 {
+      background-image: url("../images/monsterArc1_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster4 {
+      background-image: url("../images/monsterArc3_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster5 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+
+    }
+    .monster6 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+  }
+  .section__image.state2 {
+    .monster1 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster2 {
+      background-image: url("../images/monsterArc1_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster3 {
+      background-image: url("../images/monsterArc3_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster4 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster5 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster6 {
+      background-image: url("../images/monsterArc3_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+  }
+  .section__image.state3 {
+    .monster1 {
+      background-image: url("../images/monsterArc3_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster2 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster3 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster4 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster5 {
+      background-image: url("../images/monsterArc3_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster6 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+  }
+  .section__image.state4 {
+    .monster1 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster2 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster3 {
+      background-image: url("../images/monsterArc3_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster4 {
+      background-image: url("../images/monsterArc3_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster5 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster6 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+  }
+  .section__image.state5 {
+    .monster1 {
+      background-image: url("../images/monsterArc3_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster2 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+    .monster3 {
+      height: 47px;
+      background-image: url("../images/monsterArc2_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster4 {
+      background-image: url("../images/monsterArc1_darkblue.svg");
+      &.dead {
+        animation-name: deadDarkblue;
+      }
+    }
+    .monster5 {
+      background-image: url("../images/monsterArc1_blue.svg");
+      &.dead {
+        animation-name: deadBlue;
+      }
+    }
+    .monster6 {
+      background-image: url("../images/monsterArc3_purple.svg");
+      &.dead {
+        animation-name: deadPurple;
+      }
+    }
+  }
+}

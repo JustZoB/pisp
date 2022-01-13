@@ -1,0 +1,395 @@
+.footer {
+  display: flex;
+  height: 70px;
+  background-color: $dark-blue;
+  border-top: 10px solid $purple;
+  width: 100%;
+
+  .wrap {
+    display: flex;
+    position: relative;
+    padding: 0 15px;
+    width: 1170px;
+    margin: 0 auto;
+    align-items: center;
+
+    &:before,
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      height: 10px;
+      background-color: $blue;
+      top: calc(50% - 5px);
+    }
+
+    &:before {
+      width: 300px;
+      right: 150px;
+    }
+
+    &:after {
+      width: 100px;
+      right: 10px;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__copyright {
+    font-family: $font-press-start-2p;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 25px;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: -24px;
+      top: 0;
+      background-image: url("../images/copyright_icon.svg");
+      background-size: cover;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      font-size: 10px;
+      line-height: 16px;
+
+      &:before {
+        width: 12px;
+        height: 12px;
+        left: -20px;
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      font-size: 8px;
+      line-height: 14px;
+
+      &:before {
+        width: 10px;
+        height: 10px;
+        left: -18px;
+      }
+    }
+  }
+}
+
+.footerAnimation {
+  width: 100%;
+  height: 58px;
+  margin-top: 30px;
+  position: relative;
+  overflow-x: hidden;
+
+  .line {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 10px;
+    background: url("../images/dot.svg") repeat-x;
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      top: 60%;
+    }
+  }
+
+  .lineAnimation1,
+  .lineAnimation2,
+  .ghost1,
+  .ghost2,
+  .ghost3,
+  .pacman {
+    position: absolute;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    background-size: cover;
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      animation-duration: 8s;
+    }
+  }
+
+  .lineAnimation1,
+  .lineAnimation2 {
+    background-color: $dark-purple;
+    height: 58px;
+    top: 0;
+    z-index: 1;
+  }
+
+  .lineAnimation1 {
+    transform: translateX(-100%);
+    width: 40%;
+    animation-name: footerLineAnimation1;
+  }
+
+  .lineAnimation2 {
+    width: 40%;
+    animation-name: footerLineAnimation2;
+  }
+
+  .ghost1,
+  .ghost2,
+  .ghost3 {
+    bottom: 5px;
+    width: 44px;
+    height: 40px;
+    z-index: 2;
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      width: 29px;
+      height: 26px;
+    }
+  }
+
+  .ghost1 {
+    background-image: url("../images/monsterGhost1.svg");
+    left: 50%;
+    animation-name: footerGhostAnimation1;
+  }
+  .ghost2 {
+    background-image: url("../images/monsterGhost3.svg");
+    left: 55%;
+    animation-name: footerGhostAnimation2;
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      animation-name: footerGhostAnimation2Adapt;
+    }
+  }
+  .ghost3 {
+    background-image: url("../images/monsterGhost4.svg");
+    left: 60%;
+    animation-name: footerGhostAnimation3;
+  }
+
+  .pacman {
+    bottom: 5px;
+    background-image: url("../images/pacman.svg");
+    left: 5%;
+    width: 42px;
+    height: 42px;
+    transform: scale(-1, 1);
+    animation-name: footerPackmanAnimation;
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      width: 27px;
+      height: 27px;
+      animation-name: footerPackmanAnimationAdapt;
+    }
+  }
+
+  @keyframes footerPackmanAnimation {
+    from {
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    1%, 3%, 5%, 7%, 9%, 11%, 13%, 15%, 17%, 19%, 21%, 23%, 25%, 27%, 29%, 31%,
+    33%, 35%, 37%, 39%, 41%, 43%, 45%, 47%, 49%, 51%, 53%, 55%, 57%, 59%, 61%,
+    63%, 65%, 67%, 69%, 71%, 73%, 75%, 77%, 79%, 81%, 83%, 85%, 87%, 89%, 91%,
+    93%, 95%, 97%, 99% {
+      background-image: url("../images/pacmanCircle.svg");
+      width: 46px;
+      animation-timing-function: step-start;
+    }
+    from, 2%, 4%, 6%, 8%, 10%, 12%, 14%, 16%, 18%, 20%, 22%, 24%, 26%, 28%,
+    30%, 32%, 34%, 36%, 38%, 40%, 42%, 44%, 46%, 48%, 50%, 52%, 54%, 56%, 58%,
+    60%, 62%, 64%, 66%, 68%, 70%, 72%, 74%, 76%, 78%, 80%, 82%, 84%, 86%, 88%,
+    90%, 92%, 94%, 96%, 98%, to {
+      background-image: url("../images/pacman.svg");
+      width: 42px;
+      animation-timing-function: step-start;
+    }
+    to {
+      left: 100%;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerPackmanSafariAnimation {
+    from {
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    to {
+      left: 100%;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerGhostAnimation1 {
+    from {
+      left: 50%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    49% {
+      opacity: 1;
+      left: 100%;
+      animation-timing-function: step-start;
+    }
+    50% {
+      opacity: 0;
+      left: -4%;
+      animation-timing-function: step-start;
+    }
+    51% {
+      opacity: 1;
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    to {
+      left: 50%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerGhostAnimation2 {
+    from {
+      left: 55%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    44% {
+      opacity: 1;
+      left: 100%;
+      animation-timing-function: step-start;
+    }
+    45% {
+      opacity: 0;
+      left: -4%;
+      animation-timing-function: step-start;
+    }
+    46% {
+      opacity: 1;
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    to {
+      left: 55%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerGhostAnimation3 {
+    from {
+      left: 60%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    39% {
+      opacity: 1;
+      left: 100%;
+      animation-timing-function: step-start;
+    }
+    40% {
+      opacity: 0;
+      left: -4%;
+      animation-timing-function: step-start;
+    }
+    41% {
+      opacity: 1;
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    to {
+      left: 60%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerLineAnimation1 {
+    from {
+      left: -4%;
+      animation-timing-function: linear;
+    }
+
+    to {
+      left: 100%;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerLineAnimation2 {
+    from {
+      left: 60%;
+      animation-timing-function: linear;
+    }
+
+    to {
+      left: 164%;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerPackmanAnimationAdapt {
+    from {
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    2%, 6%, 10%, 14%, 18%, 22%, 26%, 30%, 34%, 38%, 42%, 46%, 50%, 54%, 58%,
+    62%, 66%, 70%, 74%, 78%, 82%, 86%, 90%, 94%, 98% {
+      background-image: url("../images/pacmanCircle.svg");
+      width: 28px;
+      animation-timing-function: step-start;
+    }
+    from, 4%, 8%, 12%, 16%, 20%, 24%, 28%, 32%, 36%, 40%, 44%, 48%, 52%, 56%,
+    60%, 64%, 68%, 72%, 76%, 80%, 84%, 88%, 92%, 96%, to {
+      background-image: url("../images/pacman.svg");
+      width: 27px;
+      animation-timing-function: step-start;
+    }
+    to {
+      left: 100%;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes footerGhostAnimation2Adapt {
+    from {
+      left: 40%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+    59% {
+      opacity: 1;
+      left: 100%;
+      animation-timing-function: step-start;
+    }
+    60% {
+      opacity: 0;
+      left: -4%;
+      animation-timing-function: step-start;
+    }
+    61% {
+      opacity: 1;
+      left: -4%;
+      animation-timing-function: linear;
+    }
+    to {
+      left: 40%;
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+.safari .footerAnimation .pacman {
+  animation-name: footerPackmanSafariAnimation;
+
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    height: 27px;
+    animation-name: footerPackmanSafariAnimation;
+  }
+}

@@ -1,0 +1,312 @@
+.en {
+  .lang-switch {
+    &:hover .lang-switch__circle {
+      right: 30px;
+    }
+
+    &__circle {
+      right: 3px;
+    }
+  }
+}
+
+.ru {
+  .lang-switch {
+    &:hover .lang-switch__circle {
+      left: 30px;
+    }
+
+    &__circle {
+      left: 3px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  height: 100px;
+  background-color: $dark-blue;
+  border-bottom: 10px solid $purple;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1170px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    z-index: 1;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .lang-switch {
+    position: relative;
+    margin-left: 30px;
+
+    &__circle {
+      position: absolute;
+      top: 3px;
+      transition: 0.1s;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      a {
+        cursor: pointer;
+        margin-top: 10px;
+        padding-bottom: 5px;
+        border-bottom: 5px solid transparent;
+
+        li {
+          font-family: $font-press-start-2p;
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        &.active-menu {
+          border-bottom: 5px solid $blue;
+        }
+
+        &:hover {
+          border-bottom: 5px solid $blue;
+        }
+
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+
+    .button {
+      $pixel: 7px;
+      $width: 208px;
+      $height: 36px;
+      $color1: $blue;
+      $color2: $pink;
+
+      button {
+        font-size: 14px;
+        line-height: 20px;
+        width: $width;
+        height: $height + $pixel*4;
+      }
+
+      .background {
+        top: $pixel*2;
+
+        &:before {
+          background-color: $color1;
+          width: $width;
+          height: $height;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color1,
+            0 $pixel*2  0 $pixel*-1 $color1,
+            0 $pixel*-4 0 $pixel*-2 $color1,
+            0 $pixel*4  0 $pixel*-2 $color1;
+        }
+
+        &:after {
+          background-color: $color2;
+          width: $width + $pixel;
+          height: $height + $pixel;
+          box-shadow:
+            0 $pixel*-2 0 $pixel*-1 $color2,
+            0  $pixel*2 0 $pixel*-1 $color2,
+            0 $pixel*-4 0 $pixel*-2 $color2,
+            0  $pixel*4 0 $pixel*-2 $color2;
+        }
+      }
+
+      &:hover {
+        button {
+          top: $pixel;
+          left: $pixel;
+        }
+        .background:before {
+          top: $pixel;
+          left: $pixel;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .burger-button_box {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 15px;
+
+    span,
+    span:before,
+    span:after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: $blue;
+      transition: 0.3s;
+    }
+
+    span:before {
+      content: "";
+      top: -10px;
+    }
+
+    span:after {
+      content: "";
+      top: 10px;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .wrap {
+      padding: 0 15px;
+    }
+    &__nav {
+      ul {
+        a {
+          margin-top: 10px;
+          padding-bottom: 5px;
+
+          li {
+            font-size: 12px;
+            line-height: 18px;
+          }
+
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+        }
+
+        .lang-switch {
+          margin-left: 20px;
+        }
+      }
+
+      .button {
+        $pixel: 7px;
+        $width: 180px;
+
+        button {
+          font-size: 12px;
+          line-height: 18px;
+          width: $width;
+        }
+
+        .background {
+          &:before {
+            width: $width;
+          }
+
+          &:after {
+            width: $width + $pixel;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .active {
+      .burger-button_box {
+        span {
+          transform: rotate(45deg);
+        }
+
+        span:before {
+          top: 0;
+          transform: rotate(0);
+        }
+
+        span:after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+
+      .header__nav {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    &__nav {
+      transform: translateX(100%);
+      opacity: 0;
+      transition: 0.3s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $dark-purple;
+      flex-direction: column;
+
+      align-items: flex-end;
+
+      ul {
+        flex-direction: column;
+        margin-top: 100px;
+        width: 100%;
+
+        a {
+          width: 100%;
+          margin: 0;
+          padding: 20px;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: right;
+          border: 0;
+
+          &.active-menu {
+            border-bottom: 0;
+          }
+
+          &:hover {
+            border-bottom: 0;
+            background-color: $dark-blue;
+          }
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .lang-switch {
+        display: none;
+      }
+    }
+
+    .button {
+      margin: 10px 20px 0 0;
+    }
+  }
+}
